@@ -1,0 +1,18 @@
+{
+    "workbench.colorTheme": "One Monokai",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.insertModeKeyBindings":[
+        {
+            "before":["k","j"],
+            "after":["<Esc>"]
+        }
+    ],
+    "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-v>": false
+    },
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 1
+}
+
