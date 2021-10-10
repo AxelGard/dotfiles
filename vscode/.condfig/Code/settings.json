@@ -10,9 +10,17 @@
     ],
     "vim.handleKeys": {
     "<C-c>": false,
-    "<C-v>": false
+    "<C-x>": false,
+    "<C-v>": false,
+    "<C-f>": false,
+    "<C-a>": false,
+    "<C-b>": false,
+    "<C-s>": false
     },
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.fontFamily": "'SF Mono Regular','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
 }
-
