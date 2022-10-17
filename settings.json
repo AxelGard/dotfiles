@@ -1,0 +1,41 @@
+{
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.insertModeKeyBindings":[
+    ],
+    "vim.handleKeys": {
+    },
+    "window.menuBarVisibility": "toggle",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.fontFamily": "'SF Mono Regular','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "liveshare.notebooks.allowGuestExecuteCells": true,
+    "C_Cpp.default.cppStandard": "c++17",
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": false,
+    "python.venvPath": "./env",
+    "C_Cpp.default.cStandard": "c17",
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": true,
+        "javascript": true,
+        "c": true,
+        "python": false
+    },
+    "jupyter.askForKernelRestart": false,
+    "python.experiments.enabled": false,
+    "python.suggest.autoImports": false,
+    "workbench.colorTheme": "One Monokai",
+    "window.zoomLevel": 1
+}
