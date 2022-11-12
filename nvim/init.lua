@@ -1,22 +1,16 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.lualine"
-require "user.toggleterm"
-require "user.project"
-require "user.impatient"
-require "user.indentline"
-require "user.alpha"
-require "user.whichkey"
-require "user.autocommands"
- 
+-- core setup 
+require("axel.plugins-setup")
+require("axel.core.options")
+require("axel.core.keymaps")
+require("axel.core.colorscheme")
+
+-- plugins 
+require("axel.plugins.comment")
+require("axel.plugins.nvim-tree")
+require("axel.plugins.lualine")
+require("axel.plugins.nvim-cmp")
+
+-- lsp 
+require("axel.plugins.lsp.mason")
+require("axel.plugins.lsp.lspsaga")
+require("axel.plugins.lsp.lspconfig")
