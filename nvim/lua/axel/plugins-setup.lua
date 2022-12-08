@@ -32,6 +32,8 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
+  -- color schems installed 
+  use("cpea2506/one_monokai.nvim")
   use("navarasu/onedark.nvim")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
@@ -44,6 +46,16 @@ return packer.startup(function(use)
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
+
+  -- tabs 
+  use({
+      'romgrk/barbar.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'}
+     })
+
+  -- terminal 
+  use("numToStr/FTerm.nvim")
+
 
  -- commenting with gc
   use("numToStr/Comment.nvim")
@@ -73,7 +85,15 @@ return packer.startup(function(use)
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls 
 
-  
+  -- tree sitter 
+  use({
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    })
+ 
 if packer_bootstrap then
     require("packer").sync()
   end

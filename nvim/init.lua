@@ -9,6 +9,9 @@ require("axel.plugins.comment")
 require("axel.plugins.nvim-tree")
 require("axel.plugins.lualine")
 require("axel.plugins.nvim-cmp")
+require("axel.plugins.treesitter")
+require("axel.plugins.barbar")
+require("axel.plugins.fterm")
 
 -- lsp 
 require("axel.plugins.lsp.mason")

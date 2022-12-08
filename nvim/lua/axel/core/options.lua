@@ -4,10 +4,11 @@ local opt = vim.opt -- for concieness
 opt.relativenumber = true 
 opt.number = true 
 
+
 -- tab & indent 
 opt.tabstop = 4
 opt.shiftwidth = 4
-opt.expandtab = true 
+opt.expandtab = true
 opt.autoindent = true
 
 -- line wrapping 
