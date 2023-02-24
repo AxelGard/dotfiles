@@ -5,7 +5,7 @@ if not status then
 end
 
 -- get lualine theme
-local lualine_theme = require("lualine.themes.onedark")
+local lualine_theme = require("lualine.themes.one_monokai")
 
 
 -- configure lualine with modified theme

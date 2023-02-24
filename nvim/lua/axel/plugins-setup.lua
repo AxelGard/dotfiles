@@ -35,6 +35,8 @@ return packer.startup(function(use)
   -- color schems installed 
   use("cpea2506/one_monokai.nvim")
   use("navarasu/onedark.nvim")
+  use("neanias/everforest-nvim")
+  use("sainnhe/sonokai")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -56,6 +58,31 @@ return packer.startup(function(use)
   -- terminal 
   use("numToStr/FTerm.nvim")
 
+  -- find window 
+  use('nvim-telescope/telescope.nvim')
+
+  -- enclosing {[]}
+  use ({
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+    })
+
+  -- dashbord
+  use 'goolord/alpha-nvim'
+
+  -- which key 
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
 
  -- commenting with gc
   use("numToStr/Comment.nvim")
@@ -77,7 +104,15 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  --use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    requires = { {"nvim-tree/nvim-web-devicons"} }
+    })
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -93,7 +128,7 @@ return packer.startup(function(use)
             ts_update()
         end,
     })
- 
+
 if packer_bootstrap then
     require("packer").sync()
   end

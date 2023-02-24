@@ -1,27 +1,19 @@
-vim.g.mapleader = " " -- leader key for cmd not std vim cmd
+vim.g.mapleader = " " -- leader key for cmd not std vim cmd 
 
 local keymap = vim.keymap
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
 -- my own keymaps
---      sets ctrl-s to save and goto normal mode
+--      sets ctrl-s to save and goto normal mode 
 keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 keymap.set("n", "<C-s>", "<Esc>:w<CR>")
 keymap.set("v", "<C-s>", "<Esc>:w<CR>")
 
--- general keymaps
-keymap.set("n", "<leader>ch", "nohl<CR>") -- rm highlights from seach
+-- general keymaps 
+keymap.set("n", "<leader>ch", "nohl<CR>") -- rm highlights from seach 
 
-keymap.set("n", "x", '"_x') -- dont copy singel char when using x in normal mode
+keymap.set("n", "x", '"_x') -- dont copy singel char when using x in normal mode 
 
--- nvim tree
+-- nvim tree 
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 
@@ -32,11 +24,11 @@ keymap.set("n", "<C-j>", "<C-w>j")
 keymap.set("n", "<C-k>", "<C-w>k")
 keymap.set("n", "<C-l>", "<C-w>l")
 
--- Open and close buffers
--- keymap.set("n", "<C-v>", "<C-w>v")-- vim <C-w>v -- split window vertically
--- keymap.set("n", "<C->", "<C-w>s")-- vim <C-w>s -- split window horizontally
--- keymap.set("n", "<C-w>e", "<C-w>=")-- vim <C-w>= -- make split windows equal width & height
-keymap.set("n", "<C-w>q", ":close<CR>") -- close current split window
+-- Open and close buffers 
+keymap.set("n", "<C-n>", "<C-w>v")-- vim <C-w>v -- split window vertically
+keymap.set("n", "<C-m>", "<C-w>s")-- vim <C-w>s -- split window horizontally
+keymap.set("n", "<C-e>", "<C-w>=")-- vim <C-w>= -- make split windows equal width & height
+keymap.set("n", "<C-q>", ":close<CR>") -- close current split window
 
 -- Resize with arrows
 keymap.set("n", "<C-Up>", ":resize -2<CR>")
@@ -79,8 +71,9 @@ keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
 -- window management
 
--- window tabs
+-- window tabs 
 -- keymap.set("n", "<S-n>", ":tabnew<CR>") -- open new tab
 -- keymap.set("n", "<S-q>", ":tabclose<CR>") -- close current tab
 -- keymap.set("n", "<S-l>", ":tabn<CR>") --  go to next tab
 -- keymap.set("n", "<S-h>", ":tabp<CR>") --  go to previous tab
+

@@ -25,7 +25,6 @@ mason_lspconfig.setup({
       "clangd",
       "jsonls",
       "quick_lint_js",
-      "sumneko_lua",
       "marksman",
       "pyright",
       "taplo",
