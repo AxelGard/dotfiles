@@ -119,15 +119,15 @@ _G.packer_plugins = {
     path = "/home/axel/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["everforest-nvim"] = {
-    loaded = true,
-    path = "/home/axel/.local/share/nvim/site/pack/packer/start/everforest-nvim",
-    url = "https://github.com/neanias/everforest-nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/axel/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/axel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -176,6 +176,11 @@ _G.packer_plugins = {
     path = "/home/axel/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/axel/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/axel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -206,6 +211,11 @@ _G.packer_plugins = {
     path = "/home/axel/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
   },
+  ["oneokai.nvim"] = {
+    loaded = true,
+    path = "/home/axel/.local/share/nvim/site/pack/packer/start/oneokai.nvim",
+    url = "https://github.com/AxelGard/oneokai.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/axel/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -216,10 +226,10 @@ _G.packer_plugins = {
     path = "/home/axel/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  sonokai = {
+  rainbow = {
     loaded = true,
-    path = "/home/axel/.local/share/nvim/site/pack/packer/start/sonokai",
-    url = "https://github.com/sainnhe/sonokai"
+    path = "/home/axel/.local/share/nvim/site/pack/packer/start/rainbow",
+    url = "https://github.com/luochen1990/rainbow"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -245,10 +255,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
@@ -257,6 +263,10 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for lspsaga.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
 time([[Config for lspsaga.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

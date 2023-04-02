@@ -5,12 +5,14 @@ if not status then
 end
 
 -- get lualine theme
-local lualine_theme = require("lualine.themes.one_monokai")
+local lualine_theme = require("lualine.themes.onedark")
 
 
 -- configure lualine with modified theme
-lualine.setup({
+lualine.setup {
   options = {
-    theme = lualine_theme,
+    theme = 'oneokai',
+    section_separators = '', 
+    component_separators = '|',
   },
-})
+}

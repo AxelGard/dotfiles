@@ -35,8 +35,8 @@ return packer.startup(function(use)
   -- color schems installed 
   use("cpea2506/one_monokai.nvim")
   use("navarasu/onedark.nvim")
-  use("neanias/everforest-nvim")
-  use("sainnhe/sonokai")
+  
+  use "AxelGard/oneokai.nvim"
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -45,6 +45,8 @@ return packer.startup(function(use)
 
   -- vs-code like icons
   use("kyazdani42/nvim-web-devicons")
+  -- vs-code like git changes 
+  use('lewis6991/gitsigns.nvim')
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
@@ -67,8 +69,13 @@ return packer.startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
     })
 
+  -- rainbow [{()}]
+    use 'luochen1990/rainbow'
   -- dashbord
   use 'goolord/alpha-nvim'
+
+  -- show hex colors 
+  use 'norcalli/nvim-colorizer.lua'
 
   -- which key 
 use {
