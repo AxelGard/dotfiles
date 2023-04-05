@@ -16,6 +16,12 @@ keymap.set("n", "x", '"_x') -- dont copy singel char when using x in normal mode
 -- nvim tree 
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
+-- Spell
+keymap.set("n", "<leader>ss", "z=") -- open the list of suggestions
+keymap.set("n", "<leader>sn", "]s") -- will go to the next misspelled word.
+keymap.set("n", "<leader>sp", "[s") -- will go to the previous misspelled word.
+keymap.set("n", "<leader>sr", ":spellr") -- spell repeater
+keymap.set("n", "<leader>sa", "zg") -- add word to word list 
 
 -- Normal --
 -- Better window navigation
@@ -66,9 +72,6 @@ keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv")
 keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
 
-
-
-
 -- window management
 
 -- window tabs 
@@ -76,4 +79,5 @@ keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
 -- keymap.set("n", "<S-q>", ":tabclose<CR>") -- close current tab
 -- keymap.set("n", "<S-l>", ":tabn<CR>") --  go to next tab
 -- keymap.set("n", "<S-h>", ":tabp<CR>") --  go to previous tab
+
 

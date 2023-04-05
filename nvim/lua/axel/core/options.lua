@@ -36,3 +36,8 @@ opt.splitright = true
 opt.splitbelow = true 
 
 opt.iskeyword:append("-")
+
+
+-- spell 
+opt.spelllang = 'en_us'
+opt.spell = true
