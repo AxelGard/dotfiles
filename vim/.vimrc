@@ -1,7 +1,13 @@
 syntax on 
 
-colorscheme pablo
+colorscheme koehler
 set number
+set relativenumber
+
+" ctrl-s to save 
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>a
+
 
 " sets sapcing to 4 
 set shiftwidth=4 

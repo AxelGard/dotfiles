@@ -1,0 +1,42 @@
+syntax on
+
+set tabstop=4 softtabstop=4
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set background=dark
+set termguicolors
+set colorcolumn=80
+set t_Co=256
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
+Plug 'fratajczak/one-monokai-vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-utils/vim-man'
+Plug 'lyuts/vim-rtags'
+Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
+Plug 'mbbill/undotree'
+
+call plug#end()
+
+"colorscheme one-monokai 
+"colorscheme gruvbox 
+colorscheme oneokai 
+
+set background=dark
+
+
