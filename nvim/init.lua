@@ -17,6 +17,8 @@ require("axel.plugins.alpha")
 require("axel.plugins.whichkey")
 
 -- lsp 
+--require("axel.plugins.lsp_config")
+
 require("axel.plugins.lsp.mason")
 require("axel.plugins.lsp.lspsaga")
 require("axel.plugins.lsp.lspconfig")

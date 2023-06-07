@@ -13,5 +13,12 @@ configs.setup({
 	autopairs = {
 		enable = true,
 	},
+    rainbow = {
+        enable = false,
+        colors = {
+          -- Colors here
+          
+        },
+    },
 	indent = { enable = true, disable = { "python", "css" } },
 })

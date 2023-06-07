@@ -70,7 +70,9 @@ return packer.startup(function(use)
     })
 
   -- rainbow [{()}]
-    use 'luochen1990/rainbow'
+    --use 'luochen1990/rainbow'
+    use 'mrjones2014/nvim-ts-rainbow'
+    
   -- dashbord
   use 'goolord/alpha-nvim'
 
