@@ -15,6 +15,7 @@ require("axel.plugins.fterm")
 require("axel.plugins.telescope")
 require("axel.plugins.alpha")
 require("axel.plugins.whichkey")
+require("axel.plugins.swenv")
 
 -- lsp 
 --require("axel.plugins.lsp_config")

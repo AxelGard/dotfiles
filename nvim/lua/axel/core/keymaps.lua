@@ -8,6 +8,10 @@ keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 keymap.set("n", "<C-s>", "<Esc>:w<CR>")
 keymap.set("v", "<C-s>", "<Esc>:w<CR>")
 
+--      ctrl-z to undo 
+keymap.set("i", "<C-z>", "<Esc>:u<CR>")
+keymap.set("n", "<C-z>", "<Esc>:u<CR>")
+
 -- general keymaps 
 keymap.set("n", "<leader>ch", "nohl<CR>") -- rm highlights from seach 
 
@@ -43,16 +47,16 @@ keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Navigate buffers
-keymap.set("n", "<S-l>", ":bnext<CR>")
-keymap.set("n", "<S-h>", ":bprevious<CR>")
+keymap.set("n", "<A-l>", ":bnext<CR>")
+keymap.set("n", "<A-h>", ":bprevious<CR>")
 
 -- Move text up and down
-keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
-keymap.set("n", "<A-k>", "<Esc>:m .-2<CR>==gi")
+keymap.set("n", "<S-j>", "<Esc>:m .+1<CR>==gi")
+keymap.set("n", "<S-k>", "<Esc>:m .-2<CR>==gi")
 
 -- Insert --
 -- Press jk fast to enter
-keymap.set("i", "jk", "<ESC>")
+-- keymap.set("i", "jk", "<ESC>")
 
 -- Visual --
 -- Stay in indent mode

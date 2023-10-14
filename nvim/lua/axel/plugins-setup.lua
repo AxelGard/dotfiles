@@ -35,6 +35,7 @@ return packer.startup(function(use)
   -- color schems installed 
   use("cpea2506/one_monokai.nvim")
   use("navarasu/onedark.nvim")
+  use("neanias/everforest-nvim")
   
   use "AxelGard/oneokai.nvim"
 
@@ -76,6 +77,10 @@ return packer.startup(function(use)
   -- dashbord
   use 'goolord/alpha-nvim'
 
+  -- For swithcing py env 
+  use 'AckslD/swenv.nvim'
+  use {'stevearc/dressing.nvim'}
+
   -- show hex colors 
   use 'norcalli/nvim-colorizer.lua'
 
@@ -92,6 +97,9 @@ use {
     }
   end
 }
+
+-- indent line
+-- use "lukas-reineke/indent-blankline.nvim"
 
  -- commenting with gc
   use("numToStr/Comment.nvim")

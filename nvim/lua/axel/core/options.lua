@@ -37,7 +37,8 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
-
+-- swap files 
+vim.opt.swapfile = false
 -- spell 
 --opt.spelllang = 'en_us'
 --opt.spell = true
