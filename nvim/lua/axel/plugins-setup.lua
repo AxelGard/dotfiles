@@ -36,13 +36,16 @@ return packer.startup(function(use)
   use("cpea2506/one_monokai.nvim")
   use("navarasu/onedark.nvim")
   use("neanias/everforest-nvim")
-  
+  use("ellisonleao/gruvbox.nvim")
   use "AxelGard/oneokai.nvim"
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
+
+  -- file explorer [[ The Primeagen ]]
+  use('ThePrimeagen/harpoon')
 
   -- vs-code like icons
   use("kyazdani42/nvim-web-devicons")
@@ -61,8 +64,6 @@ return packer.startup(function(use)
   -- terminal 
   use("numToStr/FTerm.nvim")
 
-  -- find window 
-  use('nvim-telescope/telescope.nvim')
 
   -- enclosing {[]}
   use ({
@@ -101,41 +102,30 @@ use {
 -- indent line
 -- use "lukas-reineke/indent-blankline.nvim"
 
+  -- find window 
+  use('nvim-telescope/telescope.nvim')
+
+use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v3.x',
+  requires = {
+    --- Uncomment these if you want to manage LSP servers from neovim
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
+
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'L3MON4D3/LuaSnip'},
+  }
+}
+
+
+
  -- commenting with gc
   use("numToStr/Comment.nvim")
-
-  -- autocompletion
-  use("hrsh7th/nvim-cmp") -- completion plugin
-  use("hrsh7th/cmp-buffer") -- source for text in buffer
-  use("hrsh7th/cmp-path") -- source for file system paths
-
-  -- snippets
-  use("L3MON4D3/LuaSnip") -- snippet engine
-  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-  use("rafamadriz/friendly-snippets") -- useful snippets
-
- -- managing & installing lsp servers, linters & formatters
-  use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-  use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
-
-  -- configuring lsp servers
-  use("neovim/nvim-lspconfig") -- easily configure language servers
-  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  --use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
-  use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-        require("lspsaga").setup({})
-    end,
-    requires = { {"nvim-tree/nvim-web-devicons"} }
-    })
-  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-  use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
-
-  -- formatting & linting
-  use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls 
 
   -- tree sitter 
   use({
