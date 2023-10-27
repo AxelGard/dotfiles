@@ -38,6 +38,7 @@ return packer.startup(function(use)
   use("neanias/everforest-nvim")
   use("ellisonleao/gruvbox.nvim")
   use "AxelGard/oneokai.nvim"
+  use("dracula/vim")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -71,10 +72,7 @@ return packer.startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
     })
 
-  -- rainbow [{()}]
-    --use 'luochen1990/rainbow'
-    use 'mrjones2014/nvim-ts-rainbow'
-    
+ 
   -- dashbord
   use 'goolord/alpha-nvim'
 

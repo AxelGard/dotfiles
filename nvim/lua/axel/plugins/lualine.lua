@@ -3,7 +3,7 @@ local status, lualine = pcall(require, "lualine")
 if not status then
   return
 end
-
+-- oneokai
 -- get lualine theme
 local lualine_theme = require("lualine.themes.oneokai")
 
@@ -12,12 +12,12 @@ local lualine_theme = require("lualine.themes.oneokai")
 lualine.setup {
   options = {
     theme = 'oneokai',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     component_separators = { left = '|', right = '|' },
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { right = '' }, right_padding = 2 }, 
+      { 'mode', separator = { right = '' }, right_padding = 2 }, 
     },
     lualine_b = { 'filename', 'branch' },
     lualine_c = {},
