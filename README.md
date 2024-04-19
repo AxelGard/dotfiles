@@ -9,4 +9,4 @@ cd ~/
 git clone git@github.com:AxelGard/dotfiles.git
 cd dotfiles/
 stow .
-´´´
+```
