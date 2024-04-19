@@ -11,10 +11,14 @@ sudo apt install stow
 place the repo in the home dir 
 ```bash
 git clone git@github.com:AxelGard/dotfiles.git ~/.dotfiles
+```
+
+go to the repo
+```bash
 cd ~/.dotfiles
 ```
 
 run stow 
 ```bash
-stow .
+stow --adopt .
 ```
