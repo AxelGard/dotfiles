@@ -138,6 +138,8 @@ alias tdo="vi ~/.todo.md"
 alias todo="vi ~/.todo.md"
 alias fixbash="vi ~/.bashrc"
 alias srcbash="source ~/.bashrc"
+alias fixdot="vi ~/.dotfiles"
+alias fixvim="vi ~/.dotfiles/.config/nvim"
 
 . "$HOME/.cargo/env"
 
