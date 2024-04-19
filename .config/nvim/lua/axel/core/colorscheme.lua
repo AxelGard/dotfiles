@@ -16,6 +16,11 @@ require("everforest").setup({
     transparent_background_level = 2
 })
 
+require("catppuccin").setup({
+    flavour = "frappe",
+
+})
+
 
 
 local status, colsch = pcall(vim.cmd,"colorscheme oneokai") -- same as abow just proteced call instead 

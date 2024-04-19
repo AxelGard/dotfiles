@@ -42,5 +42,6 @@
     "window.menuBarVisibility": "toggle",
     "editor.lineNumbers": "relative",
     "svelte.enable-ts-plugin": true,
-    "workbench.colorTheme": "One Monokai"
+    "workbench.colorTheme": "Dark+ One Monokai",
+    "window.zoomLevel": 1
 }
