@@ -12,7 +12,7 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "C_Cpp.updateChannel": "Insiders",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono Regular', 'SF Mono Regular', 'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'",
+    "editor.fontFamily": " 'SF Mono Regular', 'JetBrains Mono','Droid Sans Mono', 'monospace', 'Droid Sans Fallback'",
     "files.exclude": {
         "**/.classpath": true,
         "**/.project": true,

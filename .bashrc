@@ -62,11 +62,11 @@ fi
 git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/*\(.*\)/(\1)/' | tr -d ' '
 }
-if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[35m\]\$(git_branch)\[\033[00m\]\$ "
-else
-    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
-fi
+PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[35m\]\$(git_branch)\[\033[00m\]\$ "
+#if [ "$color_prompt" = yes ]; then
+#else
+#    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
+#fi
 #export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 #export PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
 
@@ -138,8 +138,15 @@ alias tdo="vi ~/.todo.md"
 alias todo="vi ~/.todo.md"
 alias fixbash="vi ~/.bashrc"
 alias srcbash="source ~/.bashrc"
-alias fixdot="vi ~/.dotfiles"
+alias fixdot="cd ~/.dotfiles"
 alias fixvim="vi ~/.dotfiles/.config/nvim"
+alias fixtmux="vi ~/.dotfiles/.config/tmux/tmux.conf"
+
+alias :q="exit"
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+
 
 . "$HOME/.cargo/env"
 
