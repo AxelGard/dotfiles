@@ -90,5 +90,9 @@
     {
         "key": "ctrl+shift+k",
         "command": "workbench.action.moveEditorToAboveGroup"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
     }
 ]
