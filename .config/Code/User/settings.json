@@ -43,5 +43,6 @@
     "editor.lineNumbers": "relative",
     "svelte.enable-ts-plugin": true,
     "workbench.colorTheme": "Dark+ One Monokai",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.minimap.autohide": true
 }
