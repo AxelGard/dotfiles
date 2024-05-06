@@ -3,6 +3,18 @@
     "vim.cursorStylePerMode.normal": "block",
     "vim.insertModeKeyBindings":[
     ],
+
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["g","i"],
+            "commands": ["editor.action.goToDeclaration"]
+        },
+        { 
+            "before": ["<leader>", "<leader>"],
+            "command": "workbench.action.navigateBack"
+        }
+    ],
+
     "vim.handleKeys": {
     },
     "vim.useSystemClipboard": true,

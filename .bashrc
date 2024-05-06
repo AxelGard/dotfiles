@@ -141,6 +141,8 @@ alias srcbash="source ~/.bashrc"
 alias fixdot="cd ~/.dotfiles"
 alias fixvim="vi ~/.config/nvim"
 alias fixtmux="vi ~/.config/tmux/tmux.conf"
+alias fixcode="vi ~/.config/Code/User/settings.json"
+alias fixcodekeys="vi ~/.config/Code/User/keybindings.json"
 
 alias :q="exit"
 alias ..="cd .."
