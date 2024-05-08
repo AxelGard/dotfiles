@@ -1,108 +1,98 @@
 [
-    {
-        "key": "ctrl+h",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.navigateDown"
-    },
-    {
-        "key": "alt+l",
-        "command": "workbench.action.nextEditorInGroup"
-    },
-    {
-        "key": "alt+h",
-        "command": "workbench.action.previousEditorInGroup"
-    },
-    {
-        "key": "alt+y",
-        "command": "workbench.action.createTerminalEditor"
-    },
-    { 
-      "key": "ctrl+h",
-      "command": "list.collapse",
-      "when": "listFocus && !inputFocus"
-    },
-    { 
-      "key": "ctrl+l",
-      "command": "list.expand",
-      "when": "listFocus && !inputFocus"
-    },
-    { 
-      "key": "ctrl+k",
-      "command": "list.focusUp",
-      "when": "listFocus && !inputFocus"
-    },
-    { 
-      "key": "ctrl+j",
-      "command": "list.focusDown",
-      "when": "listFocus && !inputFocus"
-    },
-    {
-      "key": "ctrl+j",
-      "command": "selectNextSuggestion",
-      "when": "suggestWidgetVisible"
-    },
-    {
-      "key": "ctrl+k",
-      "command": "selectPrevSuggestion",
-      "when": "suggestWidgetVisible"
-    },
-    {
-      "key": "ctrl+j",
-      "command": "workbench.action.quickOpenSelectNext",
-      "when": "inQuickOpen"
-    },
-    {
-      "key": "ctrl+k",
-      "command": "workbench.action.quickOpenSelectPrevious",
-      "when": "inQuickOpen"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "workbench.action.splitEditor"
-    },
-    {
-        "key": "ctrl+m",
-        "command":"workbench.action.splitEditorOrthogonal" 
-    },
-    {
-        "key": "ctrl+shift+l",
-        "command":"workbench.action.moveEditorToNextGroup" 
-    },
-    {
-        "key": "ctrl+shift+h",
-        "command":"workbench.action.moveEditorToPreviousGroup" 
-    },
-    {
-        "key": "ctrl+shift+j",
-        "command": "workbench.action.moveEditorToBelowGroup"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "workbench.action.moveEditorToAboveGroup"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-      "key": "f12",
-      "command": "editor.action.revealDefinition",
-      "when": "editorHasDefinitionProvider && editorTextFocus"
-    },
-    {
-      "key": "f12",
-      "command": "-editor.action.revealDefinition",
-      "when": "editorHasDefinitionProvider && editorTextFocus"
-    }
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.previousEditorInGroup"
+  },
+  {
+    "key": "alt+y",
+    "command": "workbench.action.createTerminalEditor"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "list.collapse",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "list.expand",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.splitEditor"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.splitEditorOrthogonal"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.moveEditorToBelowGroup"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.moveEditorToAboveGroup"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  }
 ]
