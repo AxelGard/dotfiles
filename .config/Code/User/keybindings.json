@@ -94,5 +94,14 @@
   {
     "key": "ctrl+p",
     "command": "workbench.action.quickOpen"
+  },
+  {
+    "key":     "ctrl+t",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key":     "ctrl+t",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when":    "terminalFocus"
   }
 ]
