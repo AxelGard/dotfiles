@@ -136,6 +136,9 @@ alias vi=nvim
 alias py=python3
 alias tdo="vi ~/.todo.md"
 alias todo="vi ~/.todo.md"
+alias mkvite="npm create vite@latest"
+
+# fix-x 
 alias fixbash="vi ~/.bashrc"
 alias srcbash="source ~/.bashrc"
 alias fixdot="cd ~/.dotfiles"
@@ -144,6 +147,7 @@ alias fixtmux="vi ~/.config/tmux/tmux.conf"
 alias fixcode="vi ~/.config/Code/User/settings.json"
 alias fixvscode="vi ~/.config/Code/User/settings.json"
 alias fixcodekeys="vi ~/.config/Code/User/keybindings.json"
+
 
 alias :q="exit"
 alias ..="cd .."
