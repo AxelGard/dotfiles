@@ -56,5 +56,6 @@
     "svelte.enable-ts-plugin": true,
     "workbench.colorTheme": "Dark+ One Monokai",
     "window.zoomLevel": 1,
-    "editor.minimap.autohide": true
+    "editor.minimap.autohide": true,
+    "prisma.showPrismaDataPlatformNotification": false
 }

@@ -12,6 +12,10 @@ keymap.set("v", "<C-s>", "<Esc>:w<CR>")
 keymap.set("i", "<C-z>", "<Esc>:u<CR>")
 keymap.set("n", "<C-z>", "<Esc>:u<CR>")
 
+-- ctrl-q to quit 
+keymap.set("i", "<C-q>", "<Esc>:qa<CR>")
+keymap.set("n", "<C-q>", "<Esc>:qa<CR>")
+
 -- general keymaps 
 keymap.set("n", "<leader>ch", "nohl<CR>") -- rm highlights from seach 
 
@@ -38,7 +42,6 @@ keymap.set("n", "<C-l>", "<C-w>l")
 keymap.set("n", "<C-n>", "<C-w>v")-- vim <C-w>v -- split window vertically
 keymap.set("n", "<C-m>", "<C-w>s")-- vim <C-w>s -- split window horizontally
 keymap.set("n", "<C-e>", "<C-w>=")-- vim <C-w>= -- make split windows equal width & height
-keymap.set("n", "<C-q>", ":close<CR>") -- close current split window
 
 -- Resize with arrows
 keymap.set("n", "<C-Up>", ":resize -2<CR>")
