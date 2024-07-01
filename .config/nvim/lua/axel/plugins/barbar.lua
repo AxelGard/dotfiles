@@ -2,8 +2,8 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+map('n', '<A-h>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-l>', '<Cmd>BufferNext<CR>', opts)
 -- Goto buffer in position...
 map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
 map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
@@ -19,6 +19,7 @@ map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+map('n', '<A-a>', '<Cmd>BufferCloseAllButCurrent<CR>', opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands

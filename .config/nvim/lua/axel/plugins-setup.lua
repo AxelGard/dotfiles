@@ -39,7 +39,7 @@ return packer.startup(function(use)
   use("ellisonleao/gruvbox.nvim")
   use "AxelGard/oneokai.nvim"
   use("dracula/vim")
-  use { "catppuccin/nvim", as = "catppuccin" } 
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -48,6 +48,9 @@ return packer.startup(function(use)
 
   -- file explorer [[ The Primeagen ]]
   use('ThePrimeagen/harpoon')
+
+  -- indent line 
+  use ("lukas-reineke/indent-blankline.nvim")
 
   -- vs-code like icons
   use("kyazdani42/nvim-web-devicons")
@@ -98,8 +101,6 @@ use {
   end
 }
 
--- indent line
--- use "lukas-reineke/indent-blankline.nvim"
 
   -- find window 
   use('nvim-telescope/telescope.nvim')
