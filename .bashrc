@@ -159,8 +159,10 @@ alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
-
-. "$HOME/.cargo/env"
+# Rust 
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
 
 # deno 
 export DENO_INSTALL="/home/axel/.deno"
