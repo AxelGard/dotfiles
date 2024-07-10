@@ -5,9 +5,20 @@ set number
 set relativenumber
 
 " ctrl-s to save 
-inoremap <C-s> <esc>:w<cr>
-nnoremap <C-s> :w<cr>a
+inoremap <C-s> <esc>:w<cr>a
+nnoremap <C-s> :w<cr>
 
+" ctrl-q to save 
+inoremap <C-q> <esc>:q<cr>
+nnoremap <C-q> :q<cr>
+
+" ctrl-z to save 
+inoremap <C-z> <esc>:u<cr>a
+nnoremap <C-z> :u<cr>
+
+" cursor block and line
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " sets sapcing to 4 
 set shiftwidth=4 

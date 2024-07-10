@@ -132,7 +132,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-alias vi=nvim
+if command -v nvim >/dev/null 2>&1; then
+  alias vi=nvim
+else
+  alias vi=vim
+fi
+
 alias py=python3
 alias tdo="vi ~/.todo.md"
 alias todo="vi ~/.todo.md"
