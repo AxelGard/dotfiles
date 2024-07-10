@@ -60,6 +60,9 @@ return packer.startup(function(use)
   -- statusline
   use("nvim-lualine/lualine.nvim")
 
+  -- multi cursor
+  use("mg979/vim-visual-multi")
+
   -- tabs 
   use({
       'romgrk/barbar.nvim',
@@ -69,6 +72,9 @@ return packer.startup(function(use)
   -- terminal 
   use("numToStr/FTerm.nvim")
 
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+     require("toggleterm").setup()
+  end}
 
   -- enclosing {[]}
   use ({

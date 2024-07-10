@@ -2,7 +2,7 @@ local opt = vim.opt -- for concieness
 
 -- line numbers 
 opt.relativenumber = false
-opt.number = true
+opt.number = true 
 
 
 -- tab & indent 
@@ -15,17 +15,16 @@ opt.autoindent = true
 opt.wrap = false
 
 -- search settings 
-opt.ignorecase = true
-opt.smartcase = true
+opt.ignorecase = true 
+opt.smartcase = true 
 
 -- curosr line, a line where the curser are at 
--- opt.curserline = true
 opt.cursorline = true
 
 -- apperance 
-opt.termguicolors = true
+opt.termguicolors = true 
 opt.background = "dark" -- will defualt colorschemes to dark version 
-opt.signcolumn = "yes"
+opt.signcolumn = "yes" 
 
 -- backspace fix 
 opt.backspace = "indent,eol,start"

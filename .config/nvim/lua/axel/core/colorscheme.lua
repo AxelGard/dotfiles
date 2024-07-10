@@ -5,11 +5,16 @@
 -- oneokai
 -- gruvbox
 -- dracula
-local _style = 'darker'
 require('oneokai').setup {
-    style = _style,
+    style = 'deep',
 }
 require('oneokai').load()
+
+
+
+require('onedark').setup {
+    style = 'deep',
+}
 
 require("everforest").setup({
     background = "hard",
@@ -17,7 +22,7 @@ require("everforest").setup({
 })
 
 require("catppuccin").setup({
-    flavour = "frappe",
+    flavour = "mocha",
 
 })
 
