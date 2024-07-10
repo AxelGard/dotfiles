@@ -1,6 +1,6 @@
 
 require("toggleterm").setup{
-    open_mapping = "<C-t>",
+    open_mapping = "<leader>t",
     direction = 'horizontal',
     close_on_exit = false,
 }
