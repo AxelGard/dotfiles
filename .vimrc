@@ -33,6 +33,8 @@ set nowrap
 " search hilighting display 
 set incsearch
 
+set clipboard+=unnamedplus
+
 " ingore capital letters druing search 
 set ignorecase
 set smartcase 

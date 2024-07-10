@@ -29,7 +29,8 @@ opt.signcolumn = "yes"
 -- backspace fix 
 opt.backspace = "indent,eol,start"
 
-opt.clipboard:append("unnamedplus")
+-- copy to with clipboard as ctrl-c/v, needs sudo apt install xclip
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
 -- split windows 
 opt.splitright = true
