@@ -147,11 +147,14 @@ alias mkvite="npm create vite@latest"
 alias fixbash="vi ~/.bashrc"
 alias srcbash="source ~/.bashrc"
 alias fixdot="cd ~/.dotfiles"
-alias fixvim="vi ~/.dotfiles/.config/nvim"
+alias fixnvim="vi ~/.dotfiles/.config/nvim"
+alias fixvim="vi ~/.dotfiles/.vimrc"
 alias fixtmux="vi ~/.dotfiles/.config/tmux/tmux.conf"
 alias fixcode="vi ~/.config/Code/User/settings.json"
 alias fixvscode="vi ~/.config/Code/User/settings.json"
 alias fixcodekeys="vi ~/.config/Code/User/keybindings.json"
+
+alias awakessh="eval `ssh-agent -s`"
 
 
 alias :q="exit"

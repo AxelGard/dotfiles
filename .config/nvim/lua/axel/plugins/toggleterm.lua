@@ -1,8 +1,9 @@
 
 require("toggleterm").setup{
-    open_mapping = "<leader>t",
+    open_mapping = '<C-t>',
     direction = 'horizontal',
     close_on_exit = false,
+    insert_mappings = false,
 }
 
 function _G.set_terminal_keymaps()
@@ -14,6 +15,7 @@ function _G.set_terminal_keymaps()
     vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
     vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
     vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+    vim.keymap.set('t', '<C-q>', [[<Cmd>:q<CR>]], opts)
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
