@@ -23,7 +23,7 @@ opt.cursorline = true
 
 -- apperance 
 opt.termguicolors = true 
-opt.background = "dark" -- will defualt colorschemes to dark version 
+--opt.background = "dark" -- will defualt colorschemes to dark version 
 opt.signcolumn = "yes" 
 
 -- backspace fix 

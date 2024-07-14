@@ -57,5 +57,9 @@
     "workbench.colorTheme": "Dark+ One Monokai",
     "window.zoomLevel": 1,
     "editor.minimap.autohide": true,
-    "prisma.showPrismaDataPlatformNotification": false
+    "prisma.showPrismaDataPlatformNotification": false,
+    "colorize.languages": [
+        "javascript",
+        "lua"
+    ]
 }
