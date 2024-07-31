@@ -11,8 +11,10 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>dn",  function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "<leader>dp",  function() vim.diagnostic.goto_prev() end, opts)
   vim.keymap.set("n", "<C-Space>",   function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+  vim.keymap.set("i", "<C-Space>",   function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("i", "<F2>", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions

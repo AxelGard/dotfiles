@@ -19,5 +19,7 @@ wk.add({
     mode = { "n", "v" }, -- NORMAL and VISUAL mode
     { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
     { "<leader>w", "<cmd>w<cr>", desc = "Write" },
-  }
+  },
+  { "<leader>F", "<cmd>lua vim.lsp.buf.formatting()<cr>", desc = "Format", mode = "n" },
+  { "<leader>h", "<cmd>nohlsearch<CR>", desc = "No Highlight", mode = "n" },
 })
