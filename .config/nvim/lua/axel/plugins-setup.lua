@@ -72,17 +72,12 @@ return packer.startup(function(use)
   -- terminal 
   use("numToStr/FTerm.nvim")
 
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-     require("toggleterm").setup()
-  end}
-
   -- enclosing {[]}
   use ({
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
     })
 
- 
   -- dashbord
   use 'goolord/alpha-nvim'
 

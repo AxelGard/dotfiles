@@ -18,7 +18,6 @@ require("axel.plugins.whichkey")
 require("axel.plugins.swenv")
 require("axel.plugins.harpoon")
 require("axel.plugins.indent")
-require("axel.plugins.toggleterm")
 
 -- lsp 
 require("axel.plugins.mason")
