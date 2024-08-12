@@ -171,4 +171,8 @@ fi
 export DENO_INSTALL="/home/axel/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-
+# Zed editor
+if [ ! -f ~/.local/bin/zed ]; then
+    export PATH=$HOME/.local/bin:$PATH
+    alias zed="~/.local/bin/zed $@"
+fi
