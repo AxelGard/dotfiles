@@ -150,6 +150,7 @@ alias fixdot="cd ~/.dotfiles"
 alias fixnvim="vi ~/.dotfiles/.config/nvim"
 alias fixvim="vi ~/.dotfiles/.vimrc"
 alias fixtmux="vi ~/.dotfiles/.config/tmux/tmux.conf"
+alias fixzed="vi ~/.dotfiles/.config/zed/settings.json"
 alias fixcode="vi ~/.config/Code/User/settings.json"
 alias fixvscode="vi ~/.config/Code/User/settings.json"
 alias fixcodekeys="vi ~/.config/Code/User/keybindings.json"
@@ -172,7 +173,7 @@ export DENO_INSTALL="/home/axel/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Zed editor
-if [ ! -f ~/.local/bin/zed ]; then
+if [ -f ~/.local/bin/zed ]; then
     export PATH=$HOME/.local/bin:$PATH
     alias zed="~/.local/bin/zed $@"
 fi

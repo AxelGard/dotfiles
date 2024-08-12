@@ -60,6 +60,7 @@
     "prisma.showPrismaDataPlatformNotification": false,
     "colorize.languages": [
         "javascript",
+        "json",
         "lua"
     ]
 }
