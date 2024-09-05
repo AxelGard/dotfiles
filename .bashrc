@@ -177,3 +177,9 @@ if [ -f ~/.local/bin/zed ]; then
     export PATH=$HOME/.local/bin:$PATH
     alias zed="~/.local/bin/zed $@"
 fi
+
+
+if [ -f ~/.ssh/GitHub.pub ]; then 
+ 	eval "$(ssh-agent -s)" >/dev/null
+	ssh-add --apple-use-keychain ~/.ssh/GitHubs >/dev/null
+fi

@@ -5,7 +5,7 @@ set number
 set relativenumber
 
 " ctrl-s to save 
-inoremap <C-s> <esc>:w<cr>a
+inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> :w<cr>
 
 " ctrl-q to save 
