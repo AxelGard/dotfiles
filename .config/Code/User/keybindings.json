@@ -21,13 +21,11 @@
   },
   {
     "key": "alt+l",
-    "command": "workbench.action.nextEditorInGroup",
-    "when": "isMac"
+    "command": "workbench.action.nextEditorInGroup"
   },
   {
     "key": "alt+h",
-    "command": "workbench.action.previousEditorInGroup",
-    "when": "isMac"
+    "command": "workbench.action.previousEditorInGroup"
   },
   {
     "key": "alt+y",
