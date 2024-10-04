@@ -19,7 +19,7 @@
   "buffer_font_family": "SFMono Nerd Font",
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "One Dark Pro",
     //"dark": "One Dark"
     "dark": "OneOkai"
   }

@@ -31,6 +31,7 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
+    "terminal.integrated.fontFamily":"MesloLGS NF",
     "liveshare.notebooks.allowGuestExecuteCells": true,
     "C_Cpp.default.cppStandard": "c++17",
     "atomKeymap.promptV3Features": true,
@@ -62,5 +63,6 @@
         "javascript",
         "json",
         "lua"
-    ]
+    ],
+    "makefile.configureOnOpen": true
 }

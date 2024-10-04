@@ -57,7 +57,10 @@ if [ -f ~/.local/bin/zed ]; then
 fi
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
+alias zed="open -a /Applications/Zed.app -n"
 
 eval "$(ssh-agent -s)" >/dev/null
 ssh-add --apple-use-keychain ~/.ssh/GitHub >/dev/null 2>&1 &
+
+source $(brew --prefix nvm)/nvm.sh
+

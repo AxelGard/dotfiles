@@ -1,5 +1,9 @@
 [
   {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save"
+  },
+  {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft"
   },
@@ -17,11 +21,13 @@
   },
   {
     "key": "alt+l",
-    "command": "workbench.action.nextEditorInGroup"
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "isMac"
   },
   {
     "key": "alt+h",
-    "command": "workbench.action.previousEditorInGroup"
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "isMac"
   },
   {
     "key": "alt+y",

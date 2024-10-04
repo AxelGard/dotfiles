@@ -84,6 +84,7 @@ xterm*|rxvt*)
 esac
 
 # enable color support of ls and also add handy aliases
+alias ls='ls --color=auto'
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -99,9 +100,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CFa'
+alias ll='ls -alF --color'
+alias la='ls -A --color'
+alias l='ls -CFa --color'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -126,6 +127,20 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+#if [[ "$(uname)" == "Darwin" ]]; then
+    # Mac-specific commands go here
+    
+#fi
+#else
+    # Linux-specific or general commands go here    
+
+#fi
+
+ [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -181,5 +196,11 @@ fi
 
 if [ -f ~/.ssh/GitHub.pub ]; then 
  	eval "$(ssh-agent -s)" >/dev/null
-	ssh-add --apple-use-keychain ~/.ssh/GitHubs >/dev/null
+	ssh-add --apple-use-keychain ~/.ssh/GitHub >/dev/null
 fi
+
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+alias zed="open -a /Applications/Zed.app -n"
