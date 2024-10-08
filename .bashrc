@@ -196,7 +196,7 @@ fi
 
 if [ -f ~/.ssh/GitHub.pub ]; then 
  	eval "$(ssh-agent -s)" >/dev/null
-	ssh-add --apple-use-keychain ~/.ssh/GitHub >/dev/null
+	ssh-add --apple-use-keychain ~/.ssh/GitHub >/dev/null 2>&1
 fi
 
 
