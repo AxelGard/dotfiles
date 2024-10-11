@@ -172,6 +172,8 @@ alias fixcodekeys="vi ~/.config/Code/User/keybindings.json"
 
 alias awakessh="eval `ssh-agent -s`"
 
+alias mktar="tar -czvf $1.tar.gz $1"
+alias untar="tar -xvf $@"
 
 alias :q="exit"
 alias ..="cd .."
