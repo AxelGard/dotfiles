@@ -175,6 +175,8 @@ alias awakessh="eval `ssh-agent -s`"
 alias mktar="tar -czvf $1.tar.gz $1"
 alias untar="tar -xvf $@"
 
+alias search="grep -r -i --color $@"
+
 alias :q="exit"
 alias ..="cd .."
 alias ...="cd ../../"
