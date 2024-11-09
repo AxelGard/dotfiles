@@ -1,4 +1,18 @@
 
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo '('$branch')'
+  fi
+}
+
+PROMPT="%F{green}%n@%m%f:%F{blue}%~%f%F{magenta}$(git_branch_name)%f> "
+
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
