@@ -181,6 +181,7 @@ alias :q="exit"
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias cddot="cd ~/.dotfiles/"
 
 # Rust 
 if [ -f "$HOME/.cargo/env" ]; then
