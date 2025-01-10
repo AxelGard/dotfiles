@@ -129,6 +129,20 @@ if ! shopt -oq posix; then
 fi
 
 
+# Function to search history with fzf
+fzf_history_search() {
+    local selected_command
+    selected_command=$(history | awk '{$1=""; print $0}' | sort | uniq | fzf --tiebreak=index | sed 's/^ *//')
+    if [[ -n $selected_command ]]; then
+        READLINE_LINE="$selected_command"
+        READLINE_POINT=${#READLINE_LINE}
+    fi
+}
+# Bind the function to Ctrl-r
+bind -x '"\C-r": fzf_history_search'
+
+
+
 #if [[ "$(uname)" == "Darwin" ]]; then
     # Mac-specific commands go here
     

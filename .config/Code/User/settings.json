@@ -42,12 +42,13 @@
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
-        "yaml": false,
         "plaintext": false,
         "markdown": true,
+        "scminput": false,
+        "yaml": false,
         "javascript": true,
         "c": true,
-        "python": false
+        "python": true
     },
     "jupyter.askForKernelRestart": false,
     "python.experiments.enabled": false,
