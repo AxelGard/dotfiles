@@ -174,7 +174,9 @@ alias mkvite="npm create vite@latest"
 
 # fix-x 
 alias fixbash="vi ~/.bashrc"
+alias fixworkbash="vi ~/.work_bashrc"
 alias srcbash="source ~/.bashrc"
+alias fixtmux="vi ~/.dotfiles/.tmux.conf"
 alias fixdot="cd ~/.dotfiles"
 alias fixnvim="vi ~/.dotfiles/.config/nvim"
 alias fixvim="vi ~/.dotfiles/.vimrc"
@@ -223,3 +225,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 alias zed="open -a /Applications/Zed.app -n"
+
+if [ -f ~/.work_bashrc ]; then
+    source ~/.work_bashrc
+fi

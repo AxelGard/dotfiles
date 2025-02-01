@@ -41,7 +41,8 @@ return packer.startup(function(use)
   use("dracula/vim")
   use { "catppuccin/nvim", as = "catppuccin" }
 
-  use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+  -- tmux & split window navigation
+  use("alexghergh/nvim-tmux-navigation")
 
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
