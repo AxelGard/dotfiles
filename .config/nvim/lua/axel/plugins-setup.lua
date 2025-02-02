@@ -42,16 +42,7 @@ return packer.startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
 
   -- tmux & split window navigation
-  -- use("alexghergh/nvim-tmux-navigation")
-  use(
-        { 'alexghergh/nvim-tmux-navigation',
-             config = function()
-                 require'nvim-tmux-navigation'.setup({
-                    disable_when_zoomed = true -- defaults to false
-                 })
-             end
-        }
-     )
+  use('alexghergh/nvim-tmux-navigation')
 
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
