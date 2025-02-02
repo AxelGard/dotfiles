@@ -33,15 +33,15 @@ keymap.set("n", "<leader>sa", "zg") -- add word to word list
 
 -- Normal --
 -- Better window navigation
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-j>", "<C-w>j")
-keymap.set("n", "<C-k>", "<C-w>k")
-keymap.set("n", "<C-l>", "<C-w>l")
+-- keymap.set("n", "<C-h>", "<C-w>h")
+-- keymap.set("n", "<C-j>", "<C-w>j")tm
+-- keymap.set("n", "<C-k>", "<C-w>k")
+-- keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Open and close buffers 
-keymap.set("n", "<C-v>", "<C-w>v")-- vim <C-w>v -- split window vertically
-keymap.set("n", '<C-n"', "<C-w>s")-- vim <C-w>s -- split window horizontally
-keymap.set("n", "<C-=>", "<C-w>=")-- vim <C-w>= -- make split windows equal width & height
+keymap.set("n", "<C-n>", "<C-w>v") -- vim <C-w>v -- split window vertically
+keymap.set("n", '<C-m"', "<C-w>s") -- vim <C-w>s -- split window horizontally
+keymap.set("n", "<C-=>", "<C-w>=") -- vim <C-w>= -- make split windows equal width & height
 
 -- Resize with arrows
 keymap.set("n", "<C-Up>", ":resize -2<CR>")
