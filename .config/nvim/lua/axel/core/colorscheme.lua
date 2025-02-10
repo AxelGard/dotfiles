@@ -6,7 +6,7 @@
 -- gruvbox
 -- dracula
 require('oneokai').setup {
-    style = "darkplus"--'darker',
+    style = "dark"--'darker',
 }
 require('oneokai').load()
 
