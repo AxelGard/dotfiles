@@ -50,6 +50,9 @@ return packer.startup(function(use)
   -- file explorer [[ The Primeagen ]]
   use('ThePrimeagen/harpoon')
 
+  -- cmd window 
+  use('AxelGard/cmdwin.nvim')
+
   -- indent line 
   use ("lukas-reineke/indent-blankline.nvim")
 
