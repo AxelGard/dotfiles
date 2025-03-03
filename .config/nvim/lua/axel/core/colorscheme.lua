@@ -6,14 +6,14 @@
 -- gruvbox
 -- dracula
 require('oneokai').setup {
-    style = "dark"--'darker',
+    ending_tildes = true,
+    style = "dark" --'darker'
 }
 require('oneokai').load()
 
 
-
 require('onedark').setup {
-    style = 'deep',
+    style = 'dark',
 }
 
 require("everforest").setup({
@@ -29,6 +29,7 @@ require("catppuccin").setup({
 
 
 local status, colsch = pcall(vim.cmd,"colorscheme oneokai") -- same as abow just proteced call instead 
+
 if not status then
     print("colorsheme not found!")
     return

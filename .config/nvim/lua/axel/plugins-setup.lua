@@ -37,7 +37,7 @@ return packer.startup(function(use)
   use("navarasu/onedark.nvim")
   use("neanias/everforest-nvim")
   use("ellisonleao/gruvbox.nvim")
-  use "AxelGard/oneokai.nvim"
+  use("AxelGard/oneokai.nvim")
   use("dracula/vim")
   use { "catppuccin/nvim", as = "catppuccin" }
 

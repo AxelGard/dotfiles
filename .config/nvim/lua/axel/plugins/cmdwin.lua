@@ -12,7 +12,7 @@ cw.setup({
         down = '<C-j>',
     },
     style = {
-        prompt = "search:  ",
+        prompt = "🔎  ",
         separator = " ",
         selected = "> ",
         unselected = "  ",
@@ -20,9 +20,9 @@ cw.setup({
     window = {
         position = 'top',  -- 'center', 'top', 'bottom', 'left', 'right'
         width = 40,        -- custom width
-        height = 20,       -- custom height
+        height = 15,       -- custom height
         padding = {
-            top = 4,       -- padding from top of screen
+            top = 1,       -- padding from top of screen
             right = 0,     -- padding from right of screen
             bottom = 0,    -- padding from bottom of screen
             left = 0,      -- padding from left of screen
