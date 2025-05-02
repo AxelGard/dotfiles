@@ -180,7 +180,8 @@ alias fixtmux="vi ~/.dotfiles/.tmux.conf"
 alias fixdot="cd ~/.dotfiles"
 alias fixnvim="vi ~/.dotfiles/.config/nvim"
 alias fixvim="vi ~/.dotfiles/.vimrc"
-alias fixtmux="vi ~/.dotfiles/.config/tmux/tmux.conf"
+#alias fixtmux="vi ~/.dotfiles/.config/tmux/tmux.conf"
+alias srctmux="tmux source-file ~/.tmux.conf"
 alias fixzed="vi ~/.dotfiles/.config/zed/settings.json"
 alias fixcode="vi ~/.config/Code/User/settings.json"
 alias fixvscode="vi ~/.config/Code/User/settings.json"
@@ -220,6 +221,7 @@ if [ -f ~/.ssh/GitHub.pub ]; then
 	ssh-add --apple-use-keychain ~/.ssh/GitHub >/dev/null 2>&1
 fi
 
+export PATH="/Users/axel/Programs/odin:$PATH"
 
 export PATH="/opt/homebrew/bin:$PATH"
 

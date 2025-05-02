@@ -13,8 +13,10 @@ keymap.set("i", "<C-z>", "<Esc>:u<CR>")
 keymap.set("n", "<C-z>", "<Esc>:u<CR>")
 
 -- ctrl-q to quit 
-keymap.set("i", "<C-q>", "<Esc>:qa<CR>")
-keymap.set("n", "<C-q>", "<Esc>:qa<CR>")
+keymap.set("i", "<C-q>", "<Esc>:q<CR>")
+keymap.set("n", "<C-q>", "<Esc>:q<CR>")
+keymap.set("i", "<C-Q>", "<Esc>:qa<CR>")
+keymap.set("n", "<C-Q>", "<Esc>:qa<CR>")
 
 -- general keymaps 
 keymap.set("n", "<leader>ch", "nohl<CR>") -- rm highlights from seach 
@@ -39,9 +41,9 @@ keymap.set("n", "<leader>sa", "zg") -- add word to word list
 -- keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Open and close buffers 
-keymap.set("n", "<C-n>", "<C-w>v") -- vim <C-w>v -- split window vertically
-keymap.set("n", '<C-m"', "<C-w>s") -- vim <C-w>s -- split window horizontally
-keymap.set("n", "<C-=>", "<C-w>=") -- vim <C-w>= -- make split windows equal width & height
+keymap.set("n", "<C-w>%", "<C-w>v") -- vim <C-w>v -- split window vertically
+keymap.set("n", '<C-w>"', "<C-w>s") -- vim <C-w>s -- split window horizontally
+-- keymap.set("n", "<C-w>=", "<C-w>=") -- vim <C-w>= -- make split windows equal width & height
 
 -- Resize with arrows
 keymap.set("n", "<C-Up>", ":resize -2<CR>")
