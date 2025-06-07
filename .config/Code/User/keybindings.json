@@ -72,11 +72,12 @@
     "when": "inQuickOpen"
   },
   {
-    "key": "ctrl+n",
-    "command": "workbench.action.splitEditor"
+    "key": "ctrl+w 5",
+    "command": "workbench.action.splitEditor", 
+    "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+m",
+    "key": "ctrl+w 2",
     "command": "workbench.action.splitEditorOrthogonal"
   },
   {

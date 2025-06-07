@@ -41,14 +41,14 @@
     "C_Cpp.default.cStandard": "c17",
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": true,
         "scminput": false,
         "yaml": false,
         "javascript": true,
         "c": true,
-        "python": true
+        "python": false
     },
     "jupyter.askForKernelRestart": false,
     "python.experiments.enabled": false,

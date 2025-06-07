@@ -20,6 +20,7 @@ require("axel.plugins.harpoon")
 require("axel.plugins.indent")
 require("axel.plugins.tmux")
 require("axel.plugins.cmdwin")
+require("axel.plugins.gitplug")
 
 -- lsp 
 require("axel.plugins.mason")
