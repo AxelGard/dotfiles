@@ -15,16 +15,16 @@ opt.autoindent = true
 opt.wrap = false
 
 -- search settings 
-opt.ignorecase = true 
-opt.smartcase = true 
+opt.ignorecase = true
+opt.smartcase = true
 
 -- curosr line, a line where the curser are at 
 opt.cursorline = true
 
 -- apperance 
-opt.termguicolors = true 
+opt.termguicolors = true
 --opt.background = "dark" -- will defualt colorschemes to dark version 
-opt.signcolumn = "yes" 
+opt.signcolumn = "yes"
 
 -- backspace fix 
 opt.backspace = "indent,eol,start"
