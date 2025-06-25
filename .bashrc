@@ -227,6 +227,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 alias zed="open -a /Applications/Zed.app -n"
 
-if [ -f ~/.work_bashrc.bash ]; then
-    source ~/.work_bashrc.bash
+if [ -f ~/.local_bashrc.bash ]; then
+    source ~/.local_bashrc.bash
 fi
