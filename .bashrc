@@ -173,7 +173,7 @@ alias mkvite="npm create vite@latest"
 
 # fix-x 
 alias fixbash="vi ~/.bashrc"
-alias fixworkbash="vi ~/.work_bashrc.bash"
+alias fixlocalbash="vi ~/.local_bashrc.bash"
 alias srcbash="source ~/.bashrc"
 alias fixtmux="vi ~/.dotfiles/.tmux.conf"
 alias fixdot="cd ~/.dotfiles"
