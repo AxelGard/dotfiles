@@ -60,6 +60,8 @@ return packer.startup(function(use)
   use("kyazdani42/nvim-web-devicons")
   -- vs-code like git changes 
   use('lewis6991/gitsigns.nvim')
+  -- icons in ediotr drop down menus 
+  use("onsails/lspkind.nvim")
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
