@@ -230,3 +230,7 @@ alias zed="open -a /Applications/Zed.app -n"
 if [ -f ~/.local_bashrc.bash ]; then
     source ~/.local_bashrc.bash
 fi
+
+
+export EDITOR='nvim'
+export VISUAL='nvim'
