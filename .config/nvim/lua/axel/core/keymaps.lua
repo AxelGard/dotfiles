@@ -39,6 +39,9 @@ keymap.set("n", "<leader>sa", "zg") -- add word to word list
 -- keymap.set("n", "<C-j>", "<C-w>j")tm
 -- keymap.set("n", "<C-k>", "<C-w>k")
 -- keymap.set("n", "<C-l>", "<C-w>l")
+-- 
+
+keymap.set('i', '<C-H>', '<C-w>', { noremap = true })
 
 -- Open and close buffers 
 keymap.set("n", "<C-w>%", "<C-w>v") -- vim <C-w>v -- split window vertically
