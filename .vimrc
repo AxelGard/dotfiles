@@ -28,7 +28,8 @@ set scrolloff=20
 
 set nowrap 
 
-"set cursorline
+set cursorline
+highlight CursorLine guibg=#2a2a2a guifg=NONE
 
 " search hilighting display 
 set incsearch
