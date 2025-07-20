@@ -8,11 +8,11 @@ set relativenumber
 inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> :w<cr>
 
-" ctrl-q to save 
+" ctrl-q to quit 
 inoremap <C-q> <esc>:q<cr>
 nnoremap <C-q> :q<cr>
 
-" ctrl-z to save 
+" ctrl-z to undo 
 inoremap <C-z> <esc>:u<cr>a
 nnoremap <C-z> :u<cr>
 
@@ -28,7 +28,8 @@ set scrolloff=20
 
 set nowrap 
 
-"set cursorline
+set cursorline
+highlight CursorLine guibg=#2a2a2a guifg=NONE
 
 " search hilighting display 
 set incsearch
