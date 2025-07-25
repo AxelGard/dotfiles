@@ -65,5 +65,6 @@
         "json",
         "lua"
     ],
-    "makefile.configureOnOpen": true
+    "makefile.configureOnOpen": true,
+    "notebook.output.textLineLimit": 90
 }
