@@ -79,13 +79,11 @@ hs.hotkey.bind({"cmd", "alt"}, "C", function()
 
     local screen = win:screen()
     local max = screen:frame()
-    local margin = 15
-
     local newFrame = {
         x = max.x + (max.w / 4),
-        y = margin,
+        y = 40,
         w = max.w / 2,
-        h = max.h - margin
+        h = max.h - 30
     }
 
     win:setFrame(newFrame)
