@@ -32,7 +32,6 @@ hs.hotkey.bind({"cmd"}, "Left", function()
     win:setFrame(f)
 end)
 
--- Move current window to right half of screen
 hs.hotkey.bind({"cmd"}, "Right", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -47,7 +46,6 @@ hs.hotkey.bind({"cmd"}, "Right", function()
 end)
 
 
--- Table to store previous window frames
 local previousFrames = {}
 
 hs.hotkey.bind({"cmd"}, "Up", function()
@@ -58,11 +56,9 @@ hs.hotkey.bind({"cmd"}, "Up", function()
     local maxFrame = win:screen():frame()
 
     if previousFrames[id] then
-        -- Restore previous frame
         win:setFrame(previousFrames[id])
         previousFrames[id] = nil
     else
-        -- Store current frame and maximize
         previousFrames[id] = win:frame()
         win:setFrame(maxFrame)
     end
@@ -72,6 +68,6 @@ hs.hotkey.bind({"cmd"}, "Down", function()
     local win = hs.window.focusedWindow()
     if win then
         win:minimize()
-        previousFrames[win:id()] = nil -- clear maximize memory if minimized
+        previousFrames[win:id()] = nil 
     end
 end)
