@@ -18,7 +18,6 @@ hs.hotkey.bind({"cmd","alt"}, "0", function()
 end)
 
 
--- Move current window to left half of screen
 hs.hotkey.bind({"cmd"}, "Left", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
