@@ -46,3 +46,10 @@ hs.hotkey.bind({"cmd"}, "Right", function()
     win:setFrame(f)
 end)
 
+hs.hotkey.bind({"cmd"}, "Up", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:maximize()
+    end
+end)
+
