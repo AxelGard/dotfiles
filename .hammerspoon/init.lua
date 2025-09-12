@@ -46,10 +46,32 @@ hs.hotkey.bind({"cmd"}, "Right", function()
     win:setFrame(f)
 end)
 
+
+-- Table to store previous window frames
+local previousFrames = {}
+
 hs.hotkey.bind({"cmd"}, "Up", function()
     local win = hs.window.focusedWindow()
-    if win then
-        win:maximize()
+    if not win then return end
+
+    local id = win:id()
+    local maxFrame = win:screen():frame()
+
+    if previousFrames[id] then
+        -- Restore previous frame
+        win:setFrame(previousFrames[id])
+        previousFrames[id] = nil
+    else
+        -- Store current frame and maximize
+        previousFrames[id] = win:frame()
+        win:setFrame(maxFrame)
     end
 end)
 
+hs.hotkey.bind({"cmd"}, "Down", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:minimize()
+        previousFrames[win:id()] = nil -- clear maximize memory if minimized
+    end
+end)
