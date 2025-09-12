@@ -68,6 +68,24 @@ hs.hotkey.bind({"cmd"}, "Down", function()
     local win = hs.window.focusedWindow()
     if win then
         win:minimize()
-        previousFrames[win:id()] = nil 
+        previousFrames[win:id()] = nil
     end
+end)
+
+
+hs.hotkey.bind({"cmd", "alt"}, "C", function()
+    local win = hs.window.focusedWindow()
+    if not win then return end
+
+    local screen = win:screen()
+    local max = screen:frame()
+
+    local newFrame = {
+        x = max.x + (max.w / 4),
+        y = 0,
+        w = max.w / 2,
+        h = max.h
+    }
+
+    win:setFrame(newFrame)
 end)
