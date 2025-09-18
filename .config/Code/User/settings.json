@@ -48,7 +48,7 @@
         "yaml": false,
         "javascript": true,
         "c": true,
-        "python": false
+        "python": true
     },
     "jupyter.askForKernelRestart": false,
     "python.experiments.enabled": false,
