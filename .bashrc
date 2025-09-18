@@ -234,3 +234,4 @@ fi
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+eval "$(~/.local/bin/mise activate)"
