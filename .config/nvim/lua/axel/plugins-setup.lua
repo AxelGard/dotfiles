@@ -53,6 +53,8 @@ return packer.startup(function(use)
   -- cmd window 
   use('AxelGard/cmdwin.nvim')
 
+  use("hrsh7th/cmp-path")
+
   -- indent line 
   use ("lukas-reineke/indent-blankline.nvim")
 
