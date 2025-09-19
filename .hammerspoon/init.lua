@@ -1,11 +1,14 @@
-hs = hs 
+local hs = hs
+
+local terminal = "com.mitchellh.ghostty" -- "com.googlecode.iterm2"
+local browser = "Brave Browser"
 
 hs.hotkey.bind({"cmd"}, "1", function()
-    hs.application.launchOrFocus("Brave Browser")
+    hs.application.launchOrFocus(browser)
 end)
 
 hs.hotkey.bind({"cmd"}, "2", function()
-    hs.application.launchOrFocusByBundleID("com.googlecode.iterm2")
+    hs.application.launchOrFocusByBundleID(terminal)
 end)
 
 hs.hotkey.bind({"cmd"}, "3", function()
@@ -17,6 +20,9 @@ hs.hotkey.bind({"cmd","alt"}, "0", function()
     print(hs.application.frontmostApplication():name())
 end)
 
+hs.hotkey.bind({"cmd", "alt"}, "t", function()
+    hs.application.launchOrFocusByBundleID(terminal)
+end)
 
 hs.hotkey.bind({"cmd"}, "Left", function()
     local win = hs.window.focusedWindow()
