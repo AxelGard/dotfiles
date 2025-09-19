@@ -62,7 +62,7 @@ fi
 git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/*\(.*\)/(\1)/' | tr -d ' '
 }
-PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[35m\]\$(git_branch)\[\033[00m\]\$ "
+PS1="${debian_chroot:+($debian_chroot)}\[\033[0;32m\]\u@\h\[\033[00m\]:\[\033[0;34m\]\w\[\033[00m\]\[\033[35m\]\$(git_branch)\[\033[00m\]\$ "
 #if [ "$color_prompt" = yes ]; then
 #else
 #    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
