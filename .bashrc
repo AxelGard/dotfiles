@@ -185,6 +185,7 @@ alias fixzed="vi ~/.dotfiles/.config/zed/settings.json"
 alias fixcode="vi ~/.config/Code/User/settings.json"
 alias fixvscode="vi ~/.config/Code/User/settings.json"
 alias fixcodekeys="vi ~/.config/Code/User/keybindings.json"
+alias fixghost="vi ~/.dotfiles/.config/ghostty/config"
 
 alias awakessh="eval `ssh-agent -s`"
 

@@ -1,4 +1,4 @@
 theme = "oneokai"
-font-family = "CaskaydiaMono Nerd Font"
+font-family = "JetBrainsMono Nerd Font"
 
 command = "~/.config/ghostty/os_spec.bash"
