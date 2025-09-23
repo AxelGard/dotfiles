@@ -1,6 +1,6 @@
 local hs = hs
 
-local terminal = "com.mitchellh.ghostty" -- "com.googlecode.iterm2"
+local terminal = "com.googlecode.iterm2" -- "com.mitchellh.ghostty" -- 
 local browser = "Brave Browser"
 
 hs.hotkey.bind({"cmd"}, "1", function()
