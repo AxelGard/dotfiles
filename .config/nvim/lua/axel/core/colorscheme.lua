@@ -7,7 +7,7 @@
 -- dracula
 require('oneokai').setup {
     ending_tildes = true,
-    style = "gruvbox_material" --'darker'
+    style = "gruvbox_material" --'darker', gruvbox_material
 }
 require('oneokai').load()
 
