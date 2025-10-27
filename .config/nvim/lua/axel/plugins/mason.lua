@@ -1,9 +1,3 @@
---'lua_ls', 
---'tsserver',
---'rust_analyzer',
---"clangd",
---"marksman",
---"pyright",
 
 
 require("mason").setup({
@@ -15,3 +9,12 @@ require("mason").setup({
         }
     }
 })
+
+-- Setup mason-lspconfig
+require("mason-lspconfig").setup({
+  automatic_installation = true, -- optional: auto-install missing servers
+  automatic_enable = true,
+})
+
+
+

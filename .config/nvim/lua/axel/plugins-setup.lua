@@ -36,7 +36,6 @@ return packer.startup(function(use)
   use("cpea2506/one_monokai.nvim")
   use("navarasu/onedark.nvim")
   use("neanias/everforest-nvim")
-  use("ellisonleao/gruvbox.nvim")
   use("AxelGard/oneokai.nvim")
   use("dracula/vim")
   use { "catppuccin/nvim", as = "catppuccin" }
@@ -69,7 +68,7 @@ return packer.startup(function(use)
   use("nvim-lualine/lualine.nvim")
 
   -- multi cursor
-  use("mg979/vim-visual-multi")
+  --use("mg979/vim-visual-multi")
 
   -- tabs 
   use({
@@ -88,6 +87,16 @@ return packer.startup(function(use)
 
   -- dashbord
   use 'goolord/alpha-nvim'
+
+  -- LSP 
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
+  use('neovim/nvim-lspconfig')
+  use('hrsh7th/nvim-cmp')
+  use('hrsh7th/cmp-nvim-lsp')
+
+  use('L3MON4D3/LuaSnip')
+
 
   -- For swithcing py env 
   use 'AckslD/swenv.nvim'
@@ -113,24 +122,6 @@ use {
 
   -- find window 
   use('nvim-telescope/telescope.nvim')
-
-use {
-  'VonHeikemen/lsp-zero.nvim',
-  branch = 'v3.x',
-  requires = {
-    --- Uncomment these if you want to manage LSP servers from neovim
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
-
-    -- LSP Support
-    {'neovim/nvim-lspconfig'},
-    -- Autocompletion
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'L3MON4D3/LuaSnip'},
-  }
-}
-
 
 
  -- commenting with gc
