@@ -22,7 +22,6 @@ require("axel.plugins.tmux")
 require("axel.plugins.cmdwin")
 require("axel.plugins.gitplug")
 require("axel.plugins.cmp-path")
-require("axel.plugins.multicursor")
 
 -- lsp 
 require("axel.plugins.mason")
