@@ -10,6 +10,7 @@ cw.setup({
     keymap = '<C-p>',
     command_map = {
         ["Format"] = "lua vim.lsp.buf.format()",
+        ["Format Black (python)"] = "!black %",
         ["Find File"] = "Telescope find_files",
         ["Equal Buff"] = from_keymap("<C-w>="),
         ["Git Reset current file"] = "lua require('gitsigns').reset_buffer()",

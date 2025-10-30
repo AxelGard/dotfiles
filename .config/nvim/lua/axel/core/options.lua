@@ -6,6 +6,8 @@ opt.number = true
 
 opt.clipboard = "unnamedplus"
 
+opt.mouse = "a"
+
 -- tab & indent 
 opt.tabstop = 4
 opt.shiftwidth = 4
