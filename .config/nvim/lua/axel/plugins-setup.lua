@@ -57,6 +57,9 @@ return packer.startup(function(use)
   -- indent line 
   use ("lukas-reineke/indent-blankline.nvim")
 
+  -- multi line 
+  use("mg979/vim-visual-multi")
+
   -- vs-code like icons
   use("kyazdani42/nvim-web-devicons")
   -- vs-code like git changes 
