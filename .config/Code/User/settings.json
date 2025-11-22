@@ -66,5 +66,6 @@
         "lua"
     ],
     "makefile.configureOnOpen": true,
-    "notebook.output.textLineLimit": 90
+    "notebook.output.textLineLimit": 90,
+    "explorer.confirmDelete": false
 }
