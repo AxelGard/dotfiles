@@ -236,3 +236,7 @@ fi
 export EDITOR='nvim'
 export VISUAL='nvim'
 eval "$(~/.local/bin/mise activate)"
+. "/home/axel/.deno/env"
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
