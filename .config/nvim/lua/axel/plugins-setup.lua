@@ -50,7 +50,7 @@ return packer.startup(function(use)
   use('ThePrimeagen/harpoon')
 
   -- cmd window 
-  use('AxelGard/cmdwin.nvim')
+  --use('AxelGard/cmdwin.nvim')
 
   use("hrsh7th/cmp-path")
 
