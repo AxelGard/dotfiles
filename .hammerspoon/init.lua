@@ -24,6 +24,10 @@ hs.hotkey.bind({"cmd", "alt"}, "t", function()
     hs.application.launchOrFocusByBundleID(terminal)
 end)
 
+hs.hotkey.bind({"cmd", "alt"}, "b", function()
+    hs.application.launchOrFocusByBundleID(browser)
+end)
+
 hs.hotkey.bind({"cmd"}, "Left", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
