@@ -1,0 +1,371 @@
+local M = {}
+
+-- Forward declarations of functions
+local close_floating_window
+local filter_commands
+local update_window_content
+local handle_navigation
+local execute_selected_command
+local handle_keypress
+local open_floating_window
+
+-- Store the current window ID and buffer ID
+local current_win_id = nil
+local current_buf_id = nil
+
+-- Store the command map
+local command_map = {}
+
+-- Store current search state
+local current_search = ""
+local selected_index = 0  -- 0 means no selection
+local current_commands = {}  -- Store filtered commands for navigation
+
+-- Style settings
+local style = {
+    prompt = '> ',
+    separator = '----------------------------------------',
+    selected = '> ',
+    unselected = '  ',
+}
+
+-- Window settings
+local window = {
+    position = 'center',    -- 'center', 'top', 'bottom', 'left', 'right'
+    width = 60,            -- window width
+    height = 10,           -- window height
+    padding = {            -- padding from screen edges when using position other than 'center'
+        top = 2,
+        right = 2,
+        bottom = 2,
+        left = 2
+    },
+    border = 'rounded'     -- border style
+}
+
+-- Store navigation keymaps
+local nav_keymaps = {
+    up = 11,    -- Ctrl-k (11 is the ASCII code for Ctrl-k)
+    down = 10,  -- Ctrl-j (10 is the ASCII code for Ctrl-j)
+}
+
+-- Function implementations
+close_floating_window = function()
+    -- First check if window exists and is valid
+    if current_win_id and vim.api.nvim_win_is_valid(current_win_id) then
+        -- Store IDs locally before resetting globals
+        local win_to_close = current_win_id
+        local buf_to_delete = current_buf_id
+
+        -- Reset global IDs and search
+        current_win_id = nil
+        current_buf_id = nil
+        current_search = ""
+        selected_index = 0
+
+        -- Close the window using local ID
+        vim.api.nvim_win_close(win_to_close, true)
+
+        -- Schedule buffer deletion for next event loop iteration
+        vim.schedule(function()
+            if buf_to_delete and vim.api.nvim_buf_is_valid(buf_to_delete) then
+                vim.api.nvim_buf_delete(buf_to_delete, { force = true })
+            end
+        end)
+    end
+end
+
+filter_commands = function(search_term)
+    local filtered = {}
+    search_term = search_term:lower()
+    for cmd_name, _ in pairs(command_map) do
+        if cmd_name:lower():find(search_term, 1, true) then
+            table.insert(filtered, cmd_name)
+        end
+    end
+    table.sort(filtered)
+    return filtered
+end
+
+update_window_content = function()
+    if not (current_win_id and vim.api.nvim_win_is_valid(current_win_id)) then
+        return
+    end
+
+    -- Update filtered commands
+    current_commands = filter_commands(current_search)
+
+    -- Adjust selected_index if it's out of bounds
+    if #current_commands == 0 then
+        selected_index = 0
+    elseif selected_index > #current_commands then
+        selected_index = #current_commands
+    end
+
+    -- Prepare lines array
+    local lines = {}
+
+    -- Add search prompt
+    table.insert(lines, style.prompt .. (current_search or ""))
+
+    -- Add separator
+    table.insert(lines, style.separator)
+
+    -- Add filtered commands with selection highlight
+    for i, cmd_name in ipairs(current_commands) do
+        if i == selected_index then
+            table.insert(lines, style.selected .. (cmd_name or ""))
+        else
+            table.insert(lines, style.unselected .. (cmd_name or ""))
+        end
+    end
+
+    -- Update buffer content safely
+    pcall(vim.api.nvim_buf_set_lines, current_buf_id, 0, -1, false, lines)
+
+    -- Move cursor to end of search line safely
+    pcall(vim.api.nvim_win_set_cursor, current_win_id, {1, #current_search + #style.prompt})
+end
+
+handle_navigation = function(direction)
+    if #current_commands == 0 then
+        return
+    end
+
+    if direction == 'up' then
+        if selected_index <= 1 then
+            selected_index = #current_commands
+        else
+            selected_index = selected_index - 1
+        end
+    elseif direction == 'down' then
+        if selected_index >= #current_commands then
+            selected_index = 1
+        else
+            selected_index = selected_index + 1
+        end
+    end
+
+    update_window_content()
+end
+
+execute_selected_command = function()
+    if selected_index > 0 and selected_index <= #current_commands then
+        local selected_name = current_commands[selected_index]
+        local command = command_map[selected_name]
+        if command then
+            -- Close the window first
+            close_floating_window()
+            -- Schedule the command execution for next event loop
+            vim.schedule(function()
+                vim.cmd(command)
+            end)
+        end
+    end
+end
+
+handle_keypress = function()
+    -- Use getcharstr() instead of getchar() for better key handling
+    local ok, char = pcall(vim.fn.getcharstr)
+    if not ok then
+        return
+    end
+
+    -- Handle special keys
+    if char == vim.api.nvim_replace_termcodes("<ESC>", true, false, true) then
+        close_floating_window()
+        return
+    elseif char == vim.api.nvim_replace_termcodes("<CR>", true, false, true) then
+        execute_selected_command()
+        return
+    elseif char == vim.api.nvim_replace_termcodes("<BS>", true, false, true) then
+        if #current_search > 0 then
+            current_search = current_search:sub(1, -2)
+            -- Reset selection when search changes
+            selected_index = 1
+            update_window_content()
+        end
+        return
+    -- Handle navigation with control keys
+    elseif char == string.char(nav_keymaps.up) then
+        handle_navigation('up')
+        return
+    elseif char == string.char(nav_keymaps.down) then
+        handle_navigation('down')
+        return
+    end
+
+    -- Add printable characters to search
+    if char:match("^[%g%s]$") and not char:match("[\n\r]") then
+        current_search = current_search .. char
+        -- Reset selection when search changes
+        selected_index = 1
+        update_window_content()
+    end
+end
+
+open_floating_window = function()
+    -- If window is already open, close it
+    if current_win_id and vim.api.nvim_win_is_valid(current_win_id) then
+        close_floating_window()
+        return
+    end
+
+    -- Reset search and selection
+    current_search = ""
+    selected_index = 1  -- Start with first item selected
+
+    -- Create buffer
+    local bufnr = vim.api.nvim_create_buf(false, true)
+    current_buf_id = bufnr
+
+    -- Get editor dimensions
+    local ui = vim.api.nvim_list_uis()[1]
+    local editor_width = ui.width
+    local editor_height = ui.height
+
+    -- Calculate window position based on settings
+    local col, row
+    if window.position == 'center' then
+        col = (editor_width - window.width) / 2
+        row = (editor_height - window.height) / 2
+    elseif window.position == 'top' then
+        col = (editor_width - window.width) / 2
+        row = window.padding.top
+    elseif window.position == 'bottom' then
+        col = (editor_width - window.width) / 2
+        row = editor_height - window.height - window.padding.bottom
+    elseif window.position == 'left' then
+        col = window.padding.left
+        row = (editor_height - window.height) / 2
+    elseif window.position == 'right' then
+        col = editor_width - window.width - window.padding.right
+        row = (editor_height - window.height) / 2
+    end
+
+    -- Window configuration
+    local win_opts = {
+        relative = 'editor',
+        width = window.width,
+        height = window.height,
+        col = col,
+        row = row,
+        anchor = 'NW',
+        style = 'minimal',
+        border = window.border
+    }
+
+    -- Create the window
+    current_win_id = vim.api.nvim_open_win(bufnr, true, win_opts)
+
+    -- Set buffer options
+    vim.api.nvim_buf_set_option(bufnr, 'modifiable', true)
+    vim.api.nvim_buf_set_option(bufnr, 'buftype', 'nofile')
+
+    -- Set window options to use default colors (no highlighting)
+    vim.api.nvim_win_set_option(current_win_id, 'winhighlight', '')
+
+    -- Initialize window content
+    update_window_content()
+
+    -- Create a buffer-local autocommand group
+    local group = vim.api.nvim_create_augroup('FloatingWindowClose_' .. bufnr, { clear = true })
+
+    -- Add cleanup autocmd when window is closed
+    vim.api.nvim_create_autocmd('BufWinLeave', {
+        group = group,
+        buffer = bufnr,
+        callback = close_floating_window,
+        once = true,
+    })
+
+    -- Start input loop
+    vim.schedule(function()
+        while current_win_id and vim.api.nvim_win_is_valid(current_win_id) do
+            handle_keypress()
+            vim.cmd('redraw')
+        end
+    end)
+end
+
+-- Setup function for configuration
+function M.setup(opts)
+    opts = opts or {}
+
+    -- Store the command map
+    command_map = opts.command_map or {}
+
+    -- Update style settings if provided
+    if opts.style then
+        for k, v in pairs(opts.style) do
+            if style[k] then
+                style[k] = v
+            end
+        end
+    end
+
+    -- Update window settings if provided
+    if opts.window then
+        -- Update simple properties
+        if opts.window.position then
+            window.position = opts.window.position
+        end
+        if opts.window.width then
+            window.width = opts.window.width
+        end
+        if opts.window.height then
+            window.height = opts.window.height
+        end
+        if opts.window.border then
+            window.border = opts.window.border
+        end
+
+        -- Update padding if provided
+        if opts.window.padding then
+            for k, v in pairs(opts.window.padding) do
+                if window.padding[k] then
+                    window.padding[k] = v
+                end
+            end
+        end
+    end
+
+    -- Store navigation keymaps if provided
+    if opts.navigation then
+        -- Convert string keymaps to their ASCII values if they're Ctrl combinations
+        if opts.navigation.up then
+            if opts.navigation.up:match('^<C%-%a>$') then
+                local key = string.lower(opts.navigation.up:match('^<C%-(%a)>$'))
+                nav_keymaps.up = string.byte(key) - string.byte('a') + 1
+            else
+                nav_keymaps.up = opts.navigation.up
+            end
+        end
+        if opts.navigation.down then
+            if opts.navigation.down:match('^<C%-%a>$') then
+                local key = string.lower(opts.navigation.down:match('^<C%-(%a)>$'))
+                nav_keymaps.down = string.byte(key) - string.byte('a') + 1
+            else
+                nav_keymaps.down = opts.navigation.down
+            end
+        end
+    end
+
+    -- Validate command map format
+    for cmd_name, cmd_value in pairs(command_map) do
+        if type(cmd_name) ~= "string" or type(cmd_value) ~= "string" then
+            error("Command map must be in format { 'command_name': 'command_value' }")
+        end
+    end
+
+    -- Set up the keymap (default to <leader>p if not specified)
+    local keymap = opts.keymap or '<leader>p'
+    vim.keymap.set('n', keymap, open_floating_window, {
+        desc = 'Toggle floating window',
+        silent = true
+    })
+end
+
+
+
+return M

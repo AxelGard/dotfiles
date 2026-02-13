@@ -1,6 +1,6 @@
 local hs = hs
 
-local terminal = "com.googlecode.iterm2" -- "com.mitchellh.ghostty" -- 
+local terminal = "com.mitchellh.ghostty" -- "com.googlecode.iterm2"
 local browser = "Brave Browser"
 
 hs.hotkey.bind({"cmd"}, "1", function()
@@ -22,6 +22,10 @@ end)
 
 hs.hotkey.bind({"cmd", "alt"}, "t", function()
     hs.application.launchOrFocusByBundleID(terminal)
+end)
+
+hs.hotkey.bind({"cmd", "alt"}, "b", function()
+    hs.application.launchOrFocusByBundleID(browser)
 end)
 
 hs.hotkey.bind({"cmd"}, "Left", function()
