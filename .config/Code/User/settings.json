@@ -67,5 +67,12 @@
     ],
     "makefile.configureOnOpen": true,
     "notebook.output.textLineLimit": 90,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.emptyWindow": false,
+    "security.workspace.trust.enabled": false,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ]
 }

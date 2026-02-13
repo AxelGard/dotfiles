@@ -170,6 +170,7 @@ alias py=python3
 alias tdo="vi ~/.todo.md"
 alias todo="vi ~/.todo.md"
 alias mkvite="npm create vite@latest"
+alias intellij="intellij-idea-community"
 
 # fix-x 
 alias fixbash="vi ~/.bashrc"
