@@ -19,8 +19,8 @@
   "buffer_font_family": "SFMono Nerd Font",
   "theme": {
     "mode": "system",
-    "light": "One Dark Pro",
+    "light": "Gruvbox Light",
     //"dark": "One Dark"
-    "dark": "OneOkai"
+    "dark": "One Dark"
   }
 }
