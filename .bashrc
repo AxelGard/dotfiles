@@ -233,6 +233,10 @@ if [ -f ~/.local_bashrc.bash ]; then
     source ~/.local_bashrc.bash
 fi
 
+if [ -f ~/.dottools/.bashrc ]; then
+    source ~/.dottools/.bashrc
+fi
+
 
 export EDITOR='nvim'
 export VISUAL='nvim'
