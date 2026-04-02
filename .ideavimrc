@@ -1,5 +1,7 @@
 
 
+let mapleader = ' '
+
 " --- Move between split windows (hjkl style) ---
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
@@ -13,4 +15,29 @@ nmap <C-w>" <C-w>s
 " --- Switch between tabs using  ---
 nmap <A-h> gT
 nmap <A-l> gt
+
+
+" --- Go to definition and navigate back ---
+"nmap gd :action GotoDeclaration
+nmap gi :action GotoImplementation<cr>
+nmap gI :action Back<cr>
+
+
+" --- Show error/warning at cursor ---
+nmap <leader>e :action ShowErrorDescription<cr>
+
+" --- Show Quick Documentation on hover ---
+nmap gh :action QuickDocumentation<cr>
+
+
+" --- Application Controls ---
+nmap <leader>r :action Run<cr>
+nmap <leader>d :action Debug<cr>
+nmap <leader>s :action Stop<cr>
+
+" --- reload config ---
+"nmap <leader>§ :action IdeaVim.ReloadVimRc.reload<cr>
+
+" --- Show Quick-Fixes and Intention Actions ---
+nmap <leader>f :action ShowIntentionActions<cr>
 
