@@ -1,0 +1,16 @@
+
+
+" --- Move between split windows (hjkl style) ---
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" --- split window ---
+nmap <C-w>% <C-w>v
+nmap <C-w>" <C-w>s
+
+" --- Switch between tabs using  ---
+nmap <A-h> gT
+nmap <A-l> gt
+
