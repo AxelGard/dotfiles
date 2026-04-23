@@ -4,8 +4,6 @@ local opt = vim.opt -- for concieness
 opt.relativenumber = false
 opt.number = true 
 
-opt.clipboard = "unnamedplus"
-
 opt.mouse = "a"
 
 -- tab & indent 
