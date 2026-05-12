@@ -30,8 +30,11 @@ opt.signcolumn = "yes"
 -- backspace fix 
 opt.backspace = "indent,eol,start"
 
--- copy to with clipboard as ctrl-c/v, needs sudo apt install xclip
-vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
+-- yank/delete to system clipboard (Ctrl+V in other apps).
+-- Use only 'unnamedplus' on Linux/Wayland — adding 'unnamed' also syncs
+-- the PRIMARY selection, which on Wayland forks a second wl-copy daemon
+-- that races with the CLIPBOARD one and makes Ctrl+V flaky.
+vim.opt.clipboard = 'unnamedplus'
 
 -- split windows 
 opt.splitright = true
