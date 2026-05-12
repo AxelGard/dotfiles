@@ -1,4 +1,4 @@
-local opt = vim.opt -- for concieness 
+local opt = vim.opt -- for concieness
 
 -- line numbers 
 opt.relativenumber = false

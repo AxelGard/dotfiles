@@ -101,6 +101,21 @@ return packer.startup(function(use)
   use('L3MON4D3/LuaSnip')
 
 
+  use {
+    "AlexandrosAlexiou/kotlin.nvim",
+    ft = { "kotlin" },
+    requires = {
+        "mason-org/mason.nvim",
+        "mason-org/mason-lspconfig.nvim",
+        "stevearc/oil.nvim",
+        "folke/trouble.nvim",
+    },
+    config = function()
+        require("axel.plugins.kotlin")
+    end,
+}
+
+
   -- For swithcing py env 
   use 'AckslD/swenv.nvim'
   use {'stevearc/dressing.nvim'}

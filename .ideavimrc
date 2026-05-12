@@ -1,6 +1,6 @@
 
 
-let mapleader = ' '
+let mapleader = " "
 
 " --- Move between split windows (hjkl style) ---
 nmap <C-h> <C-w>h
@@ -19,9 +19,15 @@ nmap <A-l> gt
 
 " --- Go to definition and navigate back ---
 "nmap gd :action GotoDeclaration
+nmap gu :action FindUsages<cr>
+nmap gd :action GotoTypeDeclaration<CR>
 nmap gi :action GotoImplementation<cr>
 nmap gI :action Back<cr>
+nmap gh <Action>(ShowHoverInfo)
+nmap gL <Action>(QuickImplementations)
 
+" --- Errors --- 
+nmap ee <Action>(ShowErrorDescription)
 
 " --- Show error/warning at cursor ---
 nmap <leader>e :action ShowErrorDescription<cr>
@@ -30,14 +36,23 @@ nmap <leader>e :action ShowErrorDescription<cr>
 nmap gh :action QuickDocumentation<cr>
 
 
+"-- refactor 
+nmap <f2> <Action>(Rename)
+
 " --- Application Controls ---
 nmap <leader>r :action Run<cr>
 nmap <leader>d :action Debug<cr>
 nmap <leader>s :action Stop<cr>
 
 " --- reload config ---
-"nmap <leader>§ :action IdeaVim.ReloadVimRc.reload<cr>
+nmap § :action IdeaVim.ReloadVimRc.reload<cr>
 
 " --- Show Quick-Fixes and Intention Actions ---
 nmap <leader>f :action ShowIntentionActions<cr>
 
+" --- Navigate popup menus ---
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+
+nnoremap <C-n> <Down>
+nnoremap <C-p> <Up>

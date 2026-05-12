@@ -1,26 +1,13 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-	return
-end
+require("nvim-treesitter.install").compilers = { "gcc", "cc", "clang" }
 
-configs.setup({
-	ensure_installed =  { "c", "lua", "vim", "vimdoc", "query", "python", "cpp" }, -- one of "all" or a list of languages
-	ignore_install = { "" }, -- List of parsers to ignore installing
-    auto_install = true,
+require("nvim-treesitter").setup({
+  install_dir = vim.fn.stdpath("data") .. "/site",
+})
 
-	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = { "css" }, -- list of language that will be disabled
-	},
-	autopairs = {
-		enable = true,
-	},
-    rainbow = {
-        enable = false,
-        colors = {
-          -- Colors here
-          
-        },
-    },
-	indent = { enable = true, disable = { "python", "css" } },
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    vim.schedule(function()
+      pcall(vim.treesitter.start, args.buf)
+    end)
+  end,
 })

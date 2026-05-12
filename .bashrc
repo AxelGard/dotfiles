@@ -187,6 +187,7 @@ alias fixcode="vi ~/.config/Code/User/settings.json"
 alias fixvscode="vi ~/.config/Code/User/settings.json"
 alias fixcodekeys="vi ~/.config/Code/User/keybindings.json"
 alias fixghost="vi ~/.dotfiles/.config/ghostty/config"
+alias fixideavim="vi ~/.ideavimrc"
 
 alias awakessh="eval `ssh-agent -s`"
 
@@ -240,8 +241,22 @@ fi
 
 export EDITOR='nvim'
 export VISUAL='nvim'
-eval "$(~/.local/bin/mise activate)"
-. "/home/axel/.deno/env"
+
+if [ -f ~/.local/bin/mise ]; then
+    eval "$(~/.local/bin/mise activate)"
+fi
+
+if [ -f ~/.deno/env ]; then
+    . "/home/axel/.deno/env"
+fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.local/bin:$PATH"
+
