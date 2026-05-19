@@ -142,6 +142,12 @@ fzf_history_search() {
 bind -x '"\C-r": fzf_history_search'
 
 
+# Source local completion scripts
+if [ -d ~/.bash_completion.d ]; then
+    for f in ~/.bash_completion.d/*; do
+        [[ -r "$f" ]] && . "$f"
+    done
+fi
 
 #if [[ "$(uname)" == "Darwin" ]]; then
     # Mac-specific commands go here
