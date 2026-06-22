@@ -207,6 +207,8 @@ alias ...="cd ../../"
 alias ....="cd ../../../"
 alias cddot="cd ~/.dotfiles/"
 
+sha256() { printf '%s' "$1" | sha256sum | cut -d' ' -f1; }
+
 # Rust 
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
@@ -265,3 +267,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+
+# opencode
+export PATH=~/.opencode/bin:$PATH
