@@ -13,8 +13,14 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 -- configure nvim-tree
 nvimtree.setup({
+  -- follow the file you're editing and highlight it in the tree
+  update_focused_file = {
+    enable = true,
+    update_root = false, -- keep tree root fixed; set true to also cd into the file's project
+  },
   -- change folder arrow icons
   renderer = {
+    highlight_opened_files = "name", -- highlight names of files open in a buffer
     icons = {
       glyphs = {
         folder = {

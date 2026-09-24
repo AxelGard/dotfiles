@@ -1,8 +1,11 @@
 #theme = "moonfly"
+#theme = "oneokai-paper"
 theme = "oneokai"
 #theme = "zenbones"
-font-family = "JetBrainsMonoNL NF"
-#font-family = "CaskaydiaMono Nerd Font Mono"
-#font-family = "ComicShannsMono Nerd Font Mono"
+#font-family = "JetBrainsMonoNL NF Regular"
+#font-family = "CaskaydiaMono NF Regular"
+font-family = "ComicShannsMono Nerd Font Mono"
 
 command = "~/.config/ghostty/os_spec.bash"
+
+keybind = ctrl+shift+r=reload_config
