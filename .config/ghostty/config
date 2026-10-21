@@ -9,3 +9,4 @@ font-family = "ComicShannsMono Nerd Font Mono"
 command = "~/.config/ghostty/os_spec.bash"
 
 keybind = ctrl+shift+r=reload_config
+keybind = f11=toggle_fullscreen
