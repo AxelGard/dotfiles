@@ -1,6 +1,7 @@
 #theme = "moonfly"
 #theme = "oneokai-paper"
-theme = "oneokai"
+theme = "oneokai-idea-dark"
+#theme = "oneokai"
 #theme = "zenbones"
 #font-family = "JetBrainsMonoNL NF Regular"
 #font-family = "CaskaydiaMono NF Regular"
