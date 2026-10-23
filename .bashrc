@@ -157,12 +157,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
     export HOMEBREW_NO_AUTO_UPDATE=1
     export HOMEBREW_NO_ANALYTICS=1 
     [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+else
+    # Linux-specific or general commands go here
+    export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 fi
-#else
-    # Linux-specific or general commands go here    
-
-#fi
-
 
 
 if command -v nvim >/dev/null 2>&1; then
@@ -206,6 +205,8 @@ alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias cddot="cd ~/.dotfiles/"
+
+sha256() { printf '%s' "$1" | sha256sum | cut -d' ' -f1; }
 
 # Rust 
 if [ -f "$HOME/.cargo/env" ]; then
@@ -262,3 +263,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+
+# opencode
+export PATH=~/.opencode/bin:$PATH

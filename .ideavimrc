@@ -2,7 +2,17 @@
 
 let mapleader = " "
 
-" --- Move between split windows (hjkl style) ---
+" --- Use system clipboard for all yank/delete/put ---
+set clipboard=unnamedplus,unnamed
+set clipboard+=ideaput
+
+" --- Jump between islands / splits (hjkl style) ---
+" Make sure IdeaVim owns these in the editor, not the IDE keymap.
+sethandler <C-h> a:vim
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+sethandler <C-l> a:vim
+
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -32,17 +42,31 @@ nmap ee <Action>(ShowErrorDescription)
 " --- Show error/warning at cursor ---
 nmap <leader>e :action ShowErrorDescription<cr>
 
-" --- Show Quick Documentation on hover ---
-nmap gh :action QuickDocumentation<cr>
+" --- Show Quick Documentation (full doc popup) ---
+nmap gH <Action>(QuickJavaDoc)
 
+" --- Show type info for expression under cursor ---
+nmap gy <Action>(ExpressionTypeInfo)
 
 "-- refactor 
-nmap <f2> <Action>(Rename)
+" IdeaVim must own F2 in the editor; the IDE keymap binds it to Next Error.
+sethandler <F2> a:vim
+nmap <F2> <Action>(RenameElement)
 
 " --- Application Controls ---
 nmap <leader>r :action Run<cr>
 nmap <leader>d :action Debug<cr>
 nmap <leader>s :action Stop<cr>
+
+" --- Debugger stepping ---
+" IdeaVim must own these; the IDE keymap binds Ctrl+Arrows to caret/scroll moves.
+sethandler <C-Right> a:vim
+sethandler <C-Down> a:vim
+sethandler <C-Up> a:vim
+
+nmap <C-Right> <Action>(StepOver)
+nmap <C-Down> <Action>(StepInto)
+nmap <C-Up> <Action>(StepOut)
 
 " --- reload config ---
 nmap § :action IdeaVim.ReloadVimRc.reload<cr>
