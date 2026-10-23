@@ -8,7 +8,15 @@ case $- in
       *) return;;
 esac
 
-_bashrc_time() { echo "$(date +%s%3N) $*" >> /tmp/bashrc_time.log; }
+_bashrc_time() {
+    local ms
+    if [ -n "${EPOCHREALTIME-}" ]; then
+        ms=$(( ${EPOCHREALTIME/[.,]/} / 1000 ))
+    else
+        ms=$(perl -MTime::HiRes=time -e 'printf "%d", time*1000')
+    fi
+    echo "$ms $*" >> /tmp/bashrc_time.log
+}
 _bashrc_time "START"
 
 # don't put duplicate lines or lines starting with space in the history.
