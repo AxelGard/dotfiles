@@ -8,6 +8,9 @@ case $- in
       *) return;;
 esac
 
+_bashrc_time() { echo "$(date +%s%3N) $*" >> /tmp/bashrc_time.log; }
+_bashrc_time "START"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -148,21 +151,18 @@ if [ -d ~/.bash_completion.d ]; then
     done
 fi
 
-#if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
     # Mac-specific commands go here
-    
-#fi
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_NO_ANALYTICS=1 
+    [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+fi
 #else
     # Linux-specific or general commands go here    
 
 #fi
 
- [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
-
-
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
 if command -v nvim >/dev/null 2>&1; then
@@ -239,9 +239,6 @@ if [ -f ~/.local_bashrc.bash ]; then
     source ~/.local_bashrc.bash
 fi
 
-if [ -f ~/.dottools/.bashrc ]; then
-    source ~/.dottools/.bashrc
-fi
 
 
 export EDITOR='nvim'
