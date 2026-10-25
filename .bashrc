@@ -165,6 +165,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
     export HOMEBREW_NO_AUTO_UPDATE=1
     export HOMEBREW_NO_ANALYTICS=1 
     [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+    # sourcing nvm.sh is slow, so put the newest nvm node on PATH and load nvm on first use
+    export NVM_DIR="$HOME/.nvm"
+    _nvm_node=$(ls -d "$NVM_DIR"/versions/node/v* 2>/dev/null | sort -V | tail -1)
+    [ -n "$_nvm_node" ] && export PATH="$_nvm_node/bin:$PATH"
+    unset _nvm_node
+    nvm() { unset -f nvm; . "$NVM_DIR/nvm.sh"; nvm "$@"; }
 else
     # Linux-specific or general commands go here
     export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"

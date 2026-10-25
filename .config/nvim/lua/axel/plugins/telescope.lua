@@ -4,7 +4,6 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true no_igno
 vim.keymap.set('n', '<leader>ft', builtin.live_grep, {})
 vim.keymap.set('n', '<leader><leader>', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 require('telescope').setup{
     pickers = {

@@ -35,7 +35,6 @@ require('gitsigns').setup{
     end)
 
     -- Actions
-    map('n', '<leader>gr', gitsigns.reset_hunk)
     map('n', '<leader>gh', gitsigns.preview_hunk)
     map('n', '<leader>gg', gitsigns.preview_hunk_inline)
     -- Toggles

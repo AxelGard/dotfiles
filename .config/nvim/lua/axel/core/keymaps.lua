@@ -19,19 +19,11 @@ keymap.set("i", "<C-Q>", "<Esc>:qa<CR>")
 keymap.set("n", "<C-Q>", "<Esc>:qa<CR>")
 
 -- general keymaps 
-keymap.set("n", "<leader>ch", "nohl<CR>") -- rm highlights from seach 
 
 keymap.set("n", "x", '"_x') -- dont copy singel char when using x in normal mode 
 
 -- nvim tree 
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
-
--- Spell
-keymap.set("n", "<leader>ss", "z=") -- open the list of suggestions
-keymap.set("n", "<leader>sn", "]s") -- will go to the next misspelled word.
-keymap.set("n", "<leader>sp", "[s") -- will go to the previous misspelled word.
-keymap.set("n", "<leader>sr", ":spellr") -- spell repeater
-keymap.set("n", "<leader>sa", "zg") -- add word to word list 
 
 -- Normal --
 -- Better window navigation

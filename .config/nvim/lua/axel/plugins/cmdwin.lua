@@ -2,7 +2,7 @@ local cw = require('cmdwin')
 
 local function from_keymap(keymap)
     return "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("
-        .. keymap
+        .. string.format("%q", keymap)
         .. ", true, true, true), 'n', true)"
 end
 
@@ -12,12 +12,23 @@ cw.setup({
         ["Format"] = "lua vim.lsp.buf.format()",
         ["Format Black (python)"] = "!black %",
         ["Find File"] = "Telescope find_files",
-        ["Equal Buff"] = from_keymap("<C-w>="),
+        ["Recent files"] = 'Telescope oldfiles',
+        ["Search text"] = 'Telescope live_grep',
+        ["Search help"] = 'Telescope help_tags',
+        ["Colorscheme"] = 'Telescope colorscheme',
+        ["Equal Buff / size"] = from_keymap("<C-w>="),
+        ["Buffer close"] = 'BufferClose',
         ["Git Reset current file"] = "lua require('gitsigns').reset_buffer()",
+        ["Git Reset hunk"] = "lua require('gitsigns').reset_hunk()",
+        ["Git Checkout branch"] = 'Telescope git_branches',
         ["Git Show diff of file"] = "lua require('gitsigns').diffthis('~')",
         ["Git Show diff current line"] = "lua require('gitsigns').diffthis()",
         ["Git Stage current file/buffer"] = "lua require('gitsigns').stage_buffer()",
         ["Spell Suggestions"] = from_keymap("z="),
+        ["Spell next misspelled word"] = from_keymap("]s"),
+        ["Spell previous misspelled word"] = from_keymap("[s"),
+        ["Spell add word"] = from_keymap("zg"),
+        ["Spell repeat replacement"] = 'spellrepall',
         ["Harpoon clear all"] = 'lua require("harpoon.mark").clear_all()',
         ["Harpoon add file"] = 'lua require("harpoon.mark").add_file()',
         ["Go to implementation"] = "lua vim.lsp.buf.implementation()",
@@ -25,9 +36,16 @@ cw.setup({
         ["Go to type definition"] = 'lua vim.lsp.buf.type_definition()',
         ["Go to refrence"] = 'lua vim.lsp.buf.references()',
         ["Rename current"] = 'lua vim.lsp.buf.rename()',
-        ["Go to next error"] = 'lua vim.diagnostic.goto_next()',
-        ["Go to previues error"] = 'lua vim.diagnostic.goto_prev()',
+        ["Go to next error"] = 'lua vim.diagnostic.jump({ count = 1, float = true })',
+        ["Go to previues error"] = 'lua vim.diagnostic.jump({ count = -1, float = true })',
         ["Code action"] = 'lua vim.lsp.buf.code_action()',
+        ["Clear search highlight"] = 'nohlsearch',
+        ["Quit all"] = 'qall',
+        ["LSP info"] = 'LspInfo',
+        ["Diagnostics to quickfix"] = 'lua vim.diagnostic.setqflist()',
+        ["Diagnostics document"] = 'Telescope diagnostics bufnr=0',
+        ["Diagnostics workspace"] = 'Telescope diagnostics',
+        ["Mason"] = 'Mason',
 
 
     },

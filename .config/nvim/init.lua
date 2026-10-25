@@ -21,10 +21,8 @@ require("axel.plugins.indent")
 require("axel.plugins.tmux")
 require("axel.plugins.gitplug")
 require("axel.plugins.cmp-path")
-
--- local plugins
-require("cmdwin2")
-require("axel.plugins.cmdwin2")
+require("axel.plugins.cmdwin")
+require("axel.plugins.yanklocation")
 
 -- lsp 
 require("axel.plugins.mason")
