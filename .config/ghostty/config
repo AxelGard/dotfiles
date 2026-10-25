@@ -9,5 +9,8 @@ font-family = "ComicShannsMono Nerd Font Mono"
 
 command = "~/.config/ghostty/os_spec.bash"
 
+# left option sends alt for nvim/tmux shortcuts, right option still types { } [ ] @ etc. (ignored on linux)
+macos-option-as-alt = left
+
 keybind = ctrl+shift+r=reload_config
 keybind = f11=toggle_fullscreen
