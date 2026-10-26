@@ -1,4 +1,8 @@
-local cw = require('cmdwin')
+-- import cmdwin plugin safely
+local status, cw = pcall(require, 'cmdwin')
+if not status then
+  return
+end
 
 local function from_keymap(keymap)
     return "lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("

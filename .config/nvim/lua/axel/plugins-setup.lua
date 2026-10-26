@@ -20,6 +20,9 @@ vim.cmd([[
   augroup end
 ]])
 
+-- packer is archived and still calls vim.tbl_islist, which newer nvim removed
+vim.tbl_islist = vim.tbl_islist or vim.islist
+
 -- import packer safely
 local status, packer = pcall(require, "packer")
 if not status then
