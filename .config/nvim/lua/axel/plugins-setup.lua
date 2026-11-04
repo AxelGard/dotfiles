@@ -154,19 +154,7 @@ use {
   -- tree sitter 
   use({
         'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ 
-                with_sync = true,
-                filesystem = {
-                    filtered_items = {
-                        visible = true,
-                        hide_dotfiles = false,
-                    --  hide_gitignored = false,
-                    },
-                }
-            })
-            ts_update()
-        end,
+        run = ':TSUpdate',
     })
 
 if packer_bootstrap then
