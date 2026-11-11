@@ -39,8 +39,11 @@ nmap gL <Action>(QuickImplementations)
 " --- Errors --- 
 nmap ee <Action>(ShowErrorDescription)
 
-" --- Show error/warning at cursor ---
-nmap <leader>e :action ShowErrorDescription<cr>
+" --- Toggle project file tree (NERDTree emulation) ---
+" Quit key inside the tree (must be set before `set NERDTree`; <leader> isn't expanded here)
+let g:NERDTreeMapQuit = '<Space>e'
+set NERDTree
+nmap <leader>e :NERDTreeToggle<CR>
 
 " --- Show Quick Documentation (full doc popup) ---
 nmap gH <Action>(QuickJavaDoc)

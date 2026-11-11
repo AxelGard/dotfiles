@@ -185,8 +185,8 @@ else
 fi
 
 alias py=python3
-alias tdo="vi ~/.todo.md"
-alias todo="vi ~/.todo.md"
+alias tdo="vi ~/Documents/notes/todo.md"
+alias todo="vi ~/Documents/notes/todo.md"
 alias mkvite="npm create vite@latest"
 alias intellij="intellij-idea-community"
 
@@ -280,3 +280,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
 export PATH=~/.opencode/bin:$PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/axel.gard@fnox.it/.lmstudio/bin"
+# End of LM Studio CLI section
+
